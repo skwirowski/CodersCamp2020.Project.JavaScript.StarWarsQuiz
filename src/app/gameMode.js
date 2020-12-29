@@ -1,0 +1,3 @@
+const gameMode = () =>{
+    console.log('')
+}
