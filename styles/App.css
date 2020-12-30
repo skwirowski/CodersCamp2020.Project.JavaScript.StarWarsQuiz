@@ -1,4 +1,5 @@
 @import './components/gameHeader.css';
+@import './components/mainMenu.css';
 
 :root {
     --border-radius: 15px;
