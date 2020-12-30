@@ -1,3 +1,11 @@
+@import './components/gameHeader.css';
+
+:root {
+    --border-radius: 15px;
+    --box-shadow-color: red;
+}
+
 body {
     font-family: 'Montserrat', sans-serif;
+    padding: 0 5vw;
 }
