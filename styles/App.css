@@ -1,4 +1,4 @@
-@import './components/gameMode.css';
+@import './components/gameMode.scss';
 
 body {
     font-family: 'Montserrat', sans-serif;

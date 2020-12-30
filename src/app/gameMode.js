@@ -4,7 +4,7 @@ export const gameMode = (text) =>{
     
     questionDiv.id = 'question';
     questionDiv.className = 'question';
-
+    questionDiv.setAttribute('data-testid', 'question')
     let questionText = document.createTextNode(`MODE: ${text}`)
     questionDiv.appendChild(questionText)
     app.appendChild(questionDiv)
