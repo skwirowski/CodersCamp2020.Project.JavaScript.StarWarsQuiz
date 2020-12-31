@@ -1,6 +1,6 @@
-const VEHICLE_MODE = 'vehicles';
-const PEOPLE_MODE = 'people';
-const SPACESHIPS_MODE = 'spaceships';
+const VEHICLE_MODE = 'Vehicles';
+const PEOPLE_MODE = 'People';
+const SPACESHIPS_MODE = 'Spaceships';
 const MODES = [VEHICLE_MODE, PEOPLE_MODE, SPACESHIPS_MODE];
 
 function saveScore(mode, nickname, score) {
