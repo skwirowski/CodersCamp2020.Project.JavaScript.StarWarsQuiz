@@ -1,4 +1,4 @@
-const isAnswerCorrect = (guess,correct) =>{
+const isAnswerCorrect = (guess, answer) =>{
     if(typeof guess !== "string"){
         throw new Error("Guessed answer isn't string");
     }
