@@ -1,9 +1,9 @@
-export class playerHuman {
+export class PlayerHuman {
     askQuestion(question, askedQuestion) {
         if(askedQuestion) {
             return askedQuestion(question);
         } else {
-            throw new TypeError('Player should ask question');
+            throw new TypeError('Player should get question');
         }
     }
 
