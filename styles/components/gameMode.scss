@@ -1,14 +1,14 @@
 .question{
     width: 100%;
-    background-color: #ffffff;
-    color: #000000;
+    background-color: var(--base-white, white);
+    color: var(--base-black, black);
     padding: 18px 0px;
     font-weight: 600;
     font-size: 1.5em;
     display: flex;
     justify-content: center;
-    border-radius: 16px;
-    -webkit-box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25), 4px 4px 40px rgba(255, 0, 0, 0.9), inset 4px 5px 4px rgba(0, 0, 0, 0.5);
-    -moz-box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25), 4px 4px 40px rgba(255, 0, 0, 0.9), inset 4px 5px 4px rgba(0, 0, 0, 0.5);
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25), 4px 4px 40px rgba(255, 0, 0, 0.9), inset 4px 5px 4px rgba(0, 0, 0, 0.5);
+    border-radius: var(--border-radius, 16px);
+    -webkit-box-shadow: var(--box-shadow-property);
+    -moz-box-shadow: var(--box-shadow-property);
+    box-shadow: var(--box-shadow-property);
 }
