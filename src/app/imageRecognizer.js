@@ -5,7 +5,8 @@ export const imageRecognizer = (img) => {
     console.log(btoa('static/assets/img/modes/people/36.jpg'))
     //function decodes a string of data which has been encoded using Base64 encoding.
     let image = atob(img) 
-    imageDiv.classList.add('swquiz-app__image');
+    imageDiv.classList.add('swquiz-app__image')
+    imageDiv.setAttribute('data-testid', 'imgRecognizer')
     imageDiv.style.backgroundImage = `url(${image})`
     app.appendChild(imageDiv)
 }
