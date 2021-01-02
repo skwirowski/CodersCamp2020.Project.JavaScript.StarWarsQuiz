@@ -1,5 +1,6 @@
 @import './components/gameMode.scss';
 @import './components/gameHeader.css';
+@import './components/image.scss';
 
 :root {
     --border-radius: 15px;
