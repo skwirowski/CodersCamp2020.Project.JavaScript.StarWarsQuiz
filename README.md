@@ -1,4 +1,3 @@
-
 ### Tips for development
 #### Creating final commit message
 

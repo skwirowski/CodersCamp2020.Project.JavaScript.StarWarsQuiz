@@ -1,8 +1,12 @@
+@import './components/gameMode.scss';
 @import './components/gameHeader.css';
 
 :root {
     --border-radius: 15px;
     --box-shadow-color: red;
+    --box-shadow-property: 0px 4px 4px rgba(0, 0, 0, 0.25), 4px 4px 40px rgba(255, 0, 0, 0.9), inset 4px 5px 4px rgba(0, 0, 0, 0.5);
+    --base-black: #000000;
+    --base-white: #ffffff;
 }
 
 * {
@@ -10,6 +14,7 @@
     padding: 0;
     box-sizing: border-box;
 }
+
 
 body {
     font-family: 'Montserrat', sans-serif;
