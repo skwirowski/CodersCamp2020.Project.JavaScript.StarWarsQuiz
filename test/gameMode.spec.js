@@ -23,8 +23,3 @@ test('Should add question to div with ID question', () => {
     gameMode(text)
     expect(screen.getByTestId('question')).toHaveTextContent(text)
 })
-/*
-test("Question shouldn't be empty",()=>{
-    const question = gameMode('Not Empty string')
-    expect(question).toBe(true)
-}) */
