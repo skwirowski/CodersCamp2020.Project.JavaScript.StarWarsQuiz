@@ -1,0 +1,14 @@
+.question{
+    width: 100%;
+    background-color: var(--base-white, white);
+    color: var(--base-black, black);
+    padding: 18px 0px;
+    font-weight: 600;
+    font-size: 1.5em;
+    display: flex;
+    justify-content: center;
+    border-radius: var(--border-radius, 16px);
+    -webkit-box-shadow: var(--box-shadow-property);
+    -moz-box-shadow: var(--box-shadow-property);
+    box-shadow: var(--box-shadow-property);
+}

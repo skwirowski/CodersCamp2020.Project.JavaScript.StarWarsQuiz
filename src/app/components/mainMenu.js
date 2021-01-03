@@ -1,5 +1,4 @@
-import { VEHICLE_MODE, PEOPLE_MODE, SPACESHIPS_MODE } from "../modes";
-
+import { VEHICLE_MODE, PEOPLE_MODE, SPACESHIPS_MODE } from '../modes';
 
 const createButton = (className, textContent, callback) => {
   const btn = document.createElement('button');
