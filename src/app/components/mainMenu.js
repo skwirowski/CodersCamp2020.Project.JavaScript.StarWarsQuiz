@@ -1,3 +1,6 @@
+import { VEHICLE_MODE, PEOPLE_MODE, SPACESHIPS_MODE } from "../modes";
+
+
 const createButton = (className, textContent, callback) => {
   const btn = document.createElement('button');
   btn.classList.add(className);
@@ -27,14 +30,14 @@ const mainMenu = (parent, callback) => {
   menuContainer.id = 'menuContainer';
   menuContainer.setAttribute('data-testid', 'menuContainer');
 
-  const btnPeople = createButton('swquiz-menu-button', 'People', callback);
+  const btnPeople = createButton('swquiz-menu-button', PEOPLE_MODE, callback);
   btnPeople.classList.add('active');
   menuContainer.appendChild(btnPeople);
   menuContainer.appendChild(
-    createButton('swquiz-menu-button', 'Vehicles', callback),
+    createButton('swquiz-menu-button', VEHICLE_MODE, callback),
   );
   menuContainer.appendChild(
-    createButton('swquiz-menu-button', 'Starships', callback),
+    createButton('swquiz-menu-button', SPACESHIPS_MODE, callback),
   );
 
   parent.appendChild(menuContainer);
