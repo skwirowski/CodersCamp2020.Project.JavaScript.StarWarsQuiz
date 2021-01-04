@@ -1,17 +1,31 @@
+@import './components/gameMode.scss';
 @import './components/gameHeader.css';
+@import './components/mainMenu.css';
+@import './components/image.scss';
+@import './components/redButton.css';
+
 
 :root {
-    --border-radius: 15px;
-    --box-shadow-color: red;
+  --border-radius: 15px;
+  --box-shadow-color: red;
+  --box-shadow-property: 0px 4px 4px rgba(0, 0, 0, 0.25),
+    4px 4px 40px rgba(255, 0, 0, 0.9), inset 4px 5px 4px rgba(0, 0, 0, 0.5);
+  --base-black: #000000;
+  --base-white: #ffffff;
 }
 
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 body {
-    font-family: 'Montserrat', sans-serif;
-    padding: 0 5vw;
+  font-family: 'Montserrat', sans-serif;
+  padding: 0 5vw;
+  min-height: 100vh;
+  background-image: url('/static/assets/ui/QuizBackground.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
 }
