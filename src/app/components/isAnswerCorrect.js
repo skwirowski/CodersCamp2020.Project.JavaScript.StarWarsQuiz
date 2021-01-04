@@ -1,9 +1,9 @@
 const isAnswerCorrect = (guess, answer) =>{
     if(typeof guess !== "string"){
-        throw new Error("Guessed answer isn't string");
+        throw new Error("TypeError");
     }
     if(typeof answer !== "string"){
-        throw new Error("Correct answer isn't string");
+        throw new Error("TypeError");
     }
     return guess.toLowerCase() === answer.toLowerCase();
 }
