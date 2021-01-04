@@ -1,0 +1,8 @@
+.swquiz-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center; }
+
+.swquiz-sw-logo {
+  max-width: 100%;
+  height: auto; }
