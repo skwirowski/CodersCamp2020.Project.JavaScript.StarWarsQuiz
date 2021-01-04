@@ -1,0 +1,13 @@
+.swquiz-app{
+    width: 100%;
+    display: grid;
+    grid-template-columns: 30% 70%;
+}
+
+.pictures{
+    grid-column: 1;
+}
+
+.game{
+    grid-column: 2;
+}
