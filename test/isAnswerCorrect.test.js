@@ -3,12 +3,12 @@ import '@testing-library/jest-dom/extend-expect';
 
 test("Throw error when guessed answer isn't string.",()=>{
     const foo = 2;
-    expect(function(){isAnswerCorrect(foo,"answer");}).toThrow(new Error("TypeError"));
+    expect(function(){isAnswerCorrect(foo,"answer");}).toThrow(new TypeError("Guessed answer isn't string"));
 })
 
 test("Throw error when correct answer isn't string.",()=>{
     const foo = 2;
-    expect(function(){isAnswerCorrect("guess",foo);}).toThrow(new Error("TypeError"));
+    expect(function(){isAnswerCorrect("guess",foo);}).toThrow(new TypeError("Guessed answer isn't string"));
 })
 
 test("Function return true if answers match.",()=>{

@@ -1,4 +1,4 @@
-import { isAnswerCorrect } from "./components/isAnswerCorrect";
+import { isAnswerCorrect } from './components/isAnswerCorrect'
 import { gameMode } from './gameMode'
 import { redButton } from './redButton'
 import { imageRecognizer } from './imageRecognizer'
