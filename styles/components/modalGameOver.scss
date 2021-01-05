@@ -1,0 +1,11 @@
+.swquiz-modal{
+    width:100%;
+    height:70vh;
+    background: var(--base-white);
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow-property);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+}
