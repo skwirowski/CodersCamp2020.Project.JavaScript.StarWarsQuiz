@@ -5,7 +5,6 @@
 @import './components/redButton.css';
 @import './components/modalGameOver.scss';
 
-
 :root {
   --border-radius: 15px;
   --box-shadow-color: red;
