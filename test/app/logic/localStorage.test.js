@@ -38,7 +38,7 @@ describe('LocalStorageScore saveScore() and getScore()', () => {
   test('Should throw an error if correctNumber is not type of number', () => {
     expect(() => {
       saveScore(PEOPLE_MODE, 'Lucy', '12', 12);
-    }).toThrow('score shall be of type "number"');
+    }).toThrow('Passed variable shall be of type "number"');
   });
 
   test('Add multiple scores', () => {
