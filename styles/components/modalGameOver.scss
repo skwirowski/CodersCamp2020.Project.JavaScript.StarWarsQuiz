@@ -1,5 +1,5 @@
 .swquiz-modal{
-    width:100%;
+    width:60vw;
     height:70vh;
     background: var(--base-white);
     border-radius: var(--border-radius);
@@ -8,9 +8,62 @@
     flex-direction: column;
     align-items: center;
     justify-content: space-evenly;
-    font-size:2em;
+    font-size:1.5em;
     padding: 5vw;
     &--paragraph{
         font-weight: 600;
     }
+
+    &--middleContainer{
+        width:100%;
+        display: grid;
+        grid-template-columns: 1fr 3fr;
+       max-height: 70%;
+       font-weight: 600;
+       margin-top:20px;
+    }
+    &--photoContainer{
+        display: flex;
+        justify-content: center;
+        align-items: flex-end;
+    }
+    &--photo{
+        max-height: 300px;
+    }
+    &--detailedAnswers{
+        max-height: 300px;
+        overflow-y: scroll;
+    }
+    &--table{
+        width:100%;
+        img{
+        max-height: 100px;
+        box-shadow: var(--box-shadow-property);
+        border-radius: var(--border-radius);
+        }
+        tbody{
+            width:100%;
+        }
+        tr{
+            width:100%;
+            display: flex;
+            justify-content: space-evenly;
+            margin: 20px 0 20px;
+            td{
+                width: 25%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+        }
+
+    }
+}
+
+.success{
+    color: rgb(58, 114, 14);
+}
+
+.danger{
+    color: rgb(159, 6, 6);
 }
