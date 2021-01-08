@@ -1,7 +1,9 @@
+import { isAnswerCorrect } from './components/isAnswerCorrect'
 import { gameMode } from './gameMode'
 import { redButton } from './redButton'
 import { imageRecognizer } from './imageRecognizer'
 import { mainMenu } from './components/mainMenu'
+
 
 export const App = ({options}) => {
     gameMode('Who is this Character?')
