@@ -16,3 +16,7 @@
 .button--uppercase {
     text-transform: uppercase;
 }
+
+.button--lighter {
+    font-weight: 400;
+}
