@@ -27,7 +27,7 @@
     grid-column-gap: 10px;
     margin-bottom: 10px;
     display: grid;
-    grid-template-columns: 15% 70% 15%;
+    grid-template-columns: 0.15fr 0.7fr 0.15fr;
     grid-template-areas: "place nickname score";
 }
 
