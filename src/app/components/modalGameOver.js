@@ -14,9 +14,9 @@ const createSummaryP = (parent, playerAnswers, computerAnswers) => {
   parent.appendChild(p);
 };
 
-const createMidContainer = (parent) =>{
+const createContainer = (parent,classHTML) =>{
     const container = document.createElement("div");
-    container.className = `${parent.className}--middleContainer`;
+    container.className = `${parent.className}--${classHTML}`;
     return container;
 }
 
@@ -71,18 +71,65 @@ const createDataTable = (parent, playerAnswers, computerAnswers) =>{
 }
 
 const mergeAndDisplayMiddleSection = (parent, playerAnswers, computerAnswers) =>{
-    const midContainer = createMidContainer(parent);
+    const container = createContainer(parent,"middleContainer");
     const img = createMidImage("../../../static/assets/ui/MasterYodaLeft.png", parent);
     const detailedAnswersSection = createDetailedAnswerSection(parent, "Detailed answers");
     const table = createDataTable(parent, playerAnswers, computerAnswers);
-    midContainer.appendChild(img);
+    container.appendChild(img);
     detailedAnswersSection.appendChild(table);
-    midContainer.appendChild(detailedAnswersSection);
+    container.appendChild(detailedAnswersSection);
 
-    parent.appendChild(midContainer);
+    parent.appendChild(container);
 }
 
-const modalGameOver = (playerAnswers, computerAnswers) => {
+const createForm = (parent, callback) =>{
+  const form = document.createElement("form");
+  form.addEventListener("submit",callback);
+  form.className = `${parent.className}--form`;
+  return form;
+}
+
+const createInput = (parent) =>{
+  const input = document.createElement("input");
+  input.className = `${parent.className}--nameInput`;
+  input.id = 'name';
+  return input;
+}
+
+const createLabel = (parent,target) =>{
+  const label = document.createElement("label");
+  label.className = `${parent.className}--label`;
+  label.setAttribute("for",target);
+  label.textContent = "Please fill your name in order to recive eternal glory in whole Galaxy!";
+  return label;
+}
+
+const createButton = (parent) =>{
+  const btn = document.createElement("button");
+  btn.className = `${parent.className}--button`;
+  btn.setAttribute("type","submit");
+  btn.textContent = "MAY THE FORCE BE WITH YOU!";
+  return btn;
+}
+
+
+const mergeAndDisplayBottomSection = (parent, callback) =>{
+  const container = createContainer(parent,"bottomContainer");
+  const form = createForm(parent,callback);
+  const input = createInput(parent);
+  const label = createLabel(parent,input.id);
+  const submitButton = createButton(parent);
+
+  container.appendChild(form);
+  form.appendChild(input);
+  form.appendChild(label);
+  form.appendChild(submitButton);
+
+  parent.appendChild(container);
+
+}
+
+const modalGameOver = (playerAnswers, computerAnswers, callback) => {
   const modal = document.createElement('section');
   modal.classList.add('swquiz-modal');
 
@@ -90,6 +137,7 @@ const modalGameOver = (playerAnswers, computerAnswers) => {
   createHeader(modal, 'Game Over');
   createSummaryP(modal,playerAnswers,computerAnswers);
   mergeAndDisplayMiddleSection(modal,playerAnswers,computerAnswers);
+  mergeAndDisplayBottomSection(modal,callback);
 
 };
 
