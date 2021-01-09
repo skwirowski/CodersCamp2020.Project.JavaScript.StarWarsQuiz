@@ -1,4 +1,4 @@
-import { updateTimeText, timeLeftText } from '../components/TimeLeftText'
+import { updateTimeText, timeLeftText } from '../components/timeLeftText'
 
 let timeLeft;
 
