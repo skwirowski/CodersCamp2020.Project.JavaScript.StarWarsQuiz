@@ -1,24 +1,27 @@
 import {getRandomIdsArray, generateQuestion} from '../../../src/app/logic/generateQuestion'
+import { getAnswer } from '../../../src/app/logic/gettingAnswer';
+
+jest.mock('../../../src/app/logic/gettingAnswer');
 
 //-----mocks-----
-const getAnswerMock = async (mode, id) => {
+getAnswer.mockImplementation(jest.fn((mode, id) => {
   let res;
   switch (id) {
     case 1:
       res = id1Response;
-      break
+      break;
     case 2:
       res = id2Response;
-      break
+      break;
     case 3:
       res = id3Response;
       break;
     default:
       res = id4Response;
   }
-  const data = await res.json();
+  const data = JSON.stringify(res);
   return Promise.resolve(data);
-};
+}));
 
 const getImage = async (mode, id) => {
   return Promise.resolve("base64imagestring");
@@ -36,7 +39,8 @@ test('Should have unique indexes', ()=>{
 test('Correct questions generating', async () => {
   //replace getAnswer, getImage, getAvibleIds methods using mock (?)
 
-  const data = await generateQuestion('people');
+  const answers = getAnswer('people', 1);
+  // const data = await generateQuestion('people');
   // expect(data.image).toBe("base64imagestring")
   // expect(data.answers).toBe(["Luke Skywalker", "C-3PO", "R2-D2", "Darth Vader"]);
   // expect(["Luke Skywalker", "C-3PO", "R2-D2", "Darth Vader"].includes(data.rightAnswer)).toBe(true);

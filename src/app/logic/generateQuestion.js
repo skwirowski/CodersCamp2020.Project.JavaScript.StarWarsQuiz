@@ -19,10 +19,10 @@ export const getImage = async (mode, id) => {
     return Buffer.from(await blob.arrayBuffer()).toString('base64');
 }
 
-export const getRandomIdsArray = (avibleIds) => {
+export const getRandomIdsArray = (availableIds) => {
     const randomIds = [];
     for (let i = 0; i < 4; i++) {
-        let randomId = avibleIds[Math.floor(Math.random() * avibleIds.length)];
+        let randomId = availableIds[Math.floor(Math.random() * availableIds.length)];
         if (randomIds.includes(randomId)) {
             i--;
             continue;
