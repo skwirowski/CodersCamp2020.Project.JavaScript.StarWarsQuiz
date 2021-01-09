@@ -58,9 +58,9 @@ function ranking(scoreList) {
   let placeholders = [];
   const places = ['1st', '2nd', '3rd'];
 
-  for (let place = 0; place < places.length; ++place) {
-    placeholders.push(createEntry(places[place], scoreList[place]));
-  }
+  places.forEach((place, index) => {
+    placeholders.push(createEntry(place, scoreList[index]));
+  })
 
   parent.appendChild(createHeader());
   parent.appendChild(createRankingHeader());
