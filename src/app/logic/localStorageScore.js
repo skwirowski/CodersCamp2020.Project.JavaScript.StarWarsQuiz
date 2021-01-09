@@ -1,11 +1,17 @@
 import { MODES } from '../modes';
 
-function saveScore(mode, nickname, score) {
-  if (!modeIsValid(mode) || !scoreIsValid(score)) return;
+function saveScore(mode, nickname, correctNumber, questionsNumber) {
+  if (
+    !modeIsValid(mode) ||
+    !numberIsValid(correctNumber) ||
+    !numberIsValid(questionsNumber)
+  )
+    return;
 
   let scores = getScores(mode);
+  let percentage = (100 * correctNumber) / questionsNumber;
 
-  scores.push({ nickname, score });
+  scores.push({ nickname, correctNumber, questionsNumber, percentage });
   scores.sort(compareScores);
 
   if (scores.length === 4) {
@@ -20,17 +26,17 @@ function getScores(mode) {
 }
 
 function compareScores(scoreA, scoreB) {
-  return scoreA.score - scoreB.score;
+  return scoreB.percentage - scoreA.percentage;
 }
 
 function modeIsValid(mode) {
   return MODES.includes(mode);
 }
 
-function scoreIsValid(score) {
-  if (typeof score !== 'number')
-    throw new TypeError('score shall be of type "number"');
-  return score >= 0;
+function numberIsValid(number) {
+  if (typeof number !== 'number')
+    throw new TypeError('Passed variable shall be of type "number"');
+  return number >= 0;
 }
 
 export { saveScore, getScores };
