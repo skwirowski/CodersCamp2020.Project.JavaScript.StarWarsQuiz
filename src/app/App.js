@@ -3,6 +3,7 @@ import { gameMode } from './gameMode'
 import { redButton } from './redButton'
 import { imageRecognizer } from './imageRecognizer'
 import { mainMenu } from './components/mainMenu'
+import { startTime } from './logic/timer'
 
 
 export const App = ({options}) => {
@@ -13,5 +14,6 @@ export const App = ({options}) => {
       return element;
     };
     mainMenu(document.querySelector('.swquiz-header'), getData);
+    startTime(options.quizMaxTime)
 }
 
