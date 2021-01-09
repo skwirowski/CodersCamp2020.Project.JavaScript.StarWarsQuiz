@@ -1,7 +1,7 @@
 import { createIconHeader } from "./iconHeader"
 
 function gameRules(textToShow) {
-  let parent = document.querySelector('.rules-box');
+  let parent = document.querySelector('.swquiz-game-body');
   parent.classList.add('box');
 
   let textElement = document.createElement('p');

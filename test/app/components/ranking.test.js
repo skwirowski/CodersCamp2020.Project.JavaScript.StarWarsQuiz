@@ -5,7 +5,7 @@ import '@testing-library/jest-dom/extend-expect';
 import { PEOPLE_MODE } from '../../../src/app/modes';
 
 test('screen has four items of ranking-row', () => {
-  document.body.innerHTML = `<div id="ranking-box" class="ranking-box"></div>`;
+  document.body.innerHTML = `<div id="swquiz-game-body" class="swquiz-game-bodyx"></div>`;
   ranking(getScores());
 
   let rows = document.querySelectorAll('.ranking-row');
@@ -14,14 +14,14 @@ test('screen has four items of ranking-row', () => {
 });
 
 test('there is an img tag for icon', () => {
-  document.body.innerHTML = `<div id="ranking-box" class="ranking-box"></div>`;
+  document.body.innerHTML = `<div id="swquiz-game-body" class="swquiz-game-body"></div>`;
   ranking(getScores());
 
   expect(screen.getByTestId('ranking-icon')).toBeTruthy();
 });
 
 test('there is Lucy and Nancy in HTML', () => {
-  document.body.innerHTML = `<div id="ranking-box" class="ranking-box"></div>`;
+  document.body.innerHTML = `<div id="swquiz-game-body" class="swquiz-game-body"></div>`;
   saveScore(PEOPLE_MODE, 'Nancy', 12, 30);
   saveScore(PEOPLE_MODE, 'Lucy', 14, 30);
 

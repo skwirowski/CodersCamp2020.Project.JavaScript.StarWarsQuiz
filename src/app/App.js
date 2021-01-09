@@ -1,13 +1,8 @@
-
-import { isAnswerCorrect } from './components/isAnswerCorrect'
-import { gameMode } from './gameMode'
-import { redButton } from './redButton'
-import { imageRecognizer } from './imageRecognizer'
-import { mainMenu } from './components/mainMenu'
-import { answersOnQuestion } from './components/answersOnQuestion'
+import { doc } from 'prettier';
 import { startTime } from './logic/timer'
 import { generateQuestion } from './logic/generatingQuestions/generateQuestion'
 import { modalGameOver } from './components/modalGameOver';
+import { mainWindow } from './components/mainWindow';
 
 const testDataHuman = {
   q1: {
@@ -68,11 +63,6 @@ const testDataComputer = {
   total: 2,
 };
 
-
-const getData = (element) => {
-  return element;
-};
-
 const modalSubmitCallback = (e) => {
   e.preventDefault();
   console.log('MAY THE FORCE BE WITH YOU!');
@@ -80,16 +70,15 @@ const modalSubmitCallback = (e) => {
 };
 
 export const App = ({ options }) => {
-  gameMode('Who is this Character?');
-  redButton('play the game');
-  imageRecognizer('c3RhdGljL2Fzc2V0cy9pbWcvbW9kZXMvcGVvcGxlLzM2LmpwZw==');
-  mainMenu(document.querySelector('.swquiz-header'), getData);
-  modalGameOver(
-    document.querySelector('#swquiz-app'),
-    testDataHuman,
-    testDataComputer,
-    modalSubmitCallback,
-  );
-  startTime(options.quizMaxTime)
-  generateQuestion('people').then(res=> console.log(res))
+  mainWindow();
+
+  // modalGameOver(
+  //   document.querySelector('#swquiz-app'),
+  //   testDataHuman,
+  //   testDataComputer,
+  //   modalSubmitCallback,
+  // );
+  // startTime(options.quizMaxTime)
+  // generateQuestion('people').then(res=> console.log(res))
+
 };

@@ -1,0 +1,50 @@
+.swquiz-row {
+  display: grid;
+  grid-template-columns: 0.3fr 0.7fr;
+  grid-template-areas: 'swquiz-row-left swquiz-row-right';
+  column-gap: 4rem;
+  justify-content: space-between;
+  justify-items: center;
+  align-items: center;
+  margin: 2vw 0;
+}
+
+.swquiz-row-left {
+  background-color: blue;
+  grid-area: swquiz-row-left;
+}
+
+.swquiz-row-right {
+  background-color: green;
+  grid-area: swquiz-row-right;
+}
+
+.swquiz-game {
+  width: 100%;
+  height: 100%;
+  display: grid;
+
+  grid-template-rows: 0.1fr 0.8fr 0.1fr;
+  grid-template-areas:
+    'swquiz-game-header       swquiz-game-header'
+    'swquiz-game-body         swquiz-game-body'
+    'swquiz-game-footer-left  swquiz-game-footer-right';
+  row-gap: 2rem;
+  column-gap: 2rem;
+}
+
+.swquiz-game-header {
+  grid-area: swquiz-game-header;
+}
+
+.swquiz-game-body {
+  grid-area: swquiz-game-body;
+}
+
+.swquiz-game-footer-left {
+  grid-area: swquiz-game-footer-left;
+}
+
+.swquiz-game-footer-right {
+  grid-area: swquiz-game-footer-right;
+}

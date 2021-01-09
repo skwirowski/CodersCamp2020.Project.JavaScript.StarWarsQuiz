@@ -54,9 +54,11 @@ function ranking(scoreList) {
     placeholders.push(createEntry(place, scoreList[index]));
   });
 
-  parent.appendChild(createIconHeader("Ranking", "ranking-icon", "./static/assets/icons/contacts_24px.svg", "Ranking icon"));
-  parent.appendChild(createRankingHeader());
-  placeholders.forEach((item) => parent.appendChild(item));
+  ranking.appendChild(createHeader());
+  ranking.appendChild(createRankingHeader());
+  placeholders.forEach((item) => ranking.appendChild(item));
+
+  parent.appendChild(ranking);
 }
 
 export { ranking };
