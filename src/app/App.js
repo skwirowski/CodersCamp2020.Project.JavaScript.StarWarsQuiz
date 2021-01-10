@@ -3,6 +3,7 @@ import { gameMode } from './gameMode'
 import { redButton } from './redButton'
 import { imageRecognizer } from './imageRecognizer'
 import { mainMenu } from './components/mainMenu'
+import { startTime } from './logic/timer'
 import { generateQuestion } from './logic/generatingQuestions/generateQuestion'
 
 
@@ -14,6 +15,8 @@ export const App = ({options}) => {
       return element;
     };
     mainMenu(document.querySelector('.swquiz-header'), getData);
+    startTime(options.quizMaxTime)
     generateQuestion('people').then(res=> console.log(res))
+
 }
 
