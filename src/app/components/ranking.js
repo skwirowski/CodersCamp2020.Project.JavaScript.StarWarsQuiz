@@ -60,7 +60,7 @@ function ranking(scoreList) {
 
   places.forEach((place, index) => {
     placeholders.push(createEntry(place, scoreList[index]));
-  })
+  });
 
   parent.appendChild(createHeader());
   parent.appendChild(createRankingHeader());
