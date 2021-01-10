@@ -2,6 +2,7 @@ import { gameMode } from './gameMode'
 import { redButton } from './redButton'
 import { imageRecognizer } from './imageRecognizer'
 import { mainMenu } from './components/mainMenu'
+import { generateQuestion } from './logic/generatingQuestions/generateQuestion'
 
 export const App = ({options}) => {
     gameMode('Who is this Character?')
@@ -11,5 +12,6 @@ export const App = ({options}) => {
       return element;
     };
     mainMenu(document.querySelector('.swquiz-header'), getData);
+    generateQuestion('people').then(res=> console.log(res))
 }
 
