@@ -14,6 +14,6 @@ export const App = ({options}) => {
       return element;
     };
     mainMenu(document.querySelector('.swquiz-header'), getData);
-    answersOnQuestion(['Luke', 'Angel', 'Becka', 'John'], 'Luke', null);
+    answersOnQuestion(['Luke', 'Angel', 'Becka', 'John'], 'Luke');
 }
 
