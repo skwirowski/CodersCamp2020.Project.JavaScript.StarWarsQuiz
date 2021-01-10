@@ -1,41 +1,23 @@
 export const answersOnQuestion = (answers, correctAnswer, checkingAnswer) => {
     const app = document.querySelector('#swquiz-app');
     const container = document.createElement('div');
-    const firstAnswer = document.createElement('input');
-    const secondAnswer = document.createElement('input');
-    const thirdAnswer = document.createElement('input');
-    const fourthAnswer = document.createElement('input');
-    let chosenAnswer;
     container.setAttribute('id', 'answers-container');
     container.setAttribute('data-testid', 'answers-container');
     container.setAttribute('class', 'container-answers');
-
-    firstAnswer.setAttribute('type', 'button');
-    firstAnswer.setAttribute('id', 'firstAnswer');
-    firstAnswer.setAttribute('data-testid', 'firstAnswer');
-    firstAnswer.setAttribute('class', 'button button--lighter');
-    firstAnswer.setAttribute('value', `${answers[0]}`);
-    secondAnswer.setAttribute('type', 'button');
-    secondAnswer.setAttribute('id', 'secondAnswer');
-    secondAnswer.setAttribute('data-testid', 'secondAnswer');
-    secondAnswer.setAttribute('class', 'button button--lighter');
-    secondAnswer.setAttribute('value', `${answers[1]}`);
-    thirdAnswer.setAttribute('type', 'button');
-    thirdAnswer.setAttribute('id', 'thirdAnswer');
-    thirdAnswer.setAttribute('data-testid', 'thirdAnswer');
-    thirdAnswer.setAttribute('class', 'button button--lighter');
-    thirdAnswer.setAttribute('value', `${answers[2]}`);
-    fourthAnswer.setAttribute('type', 'button');
-    fourthAnswer.setAttribute('id', 'fourthAnswer');
-    fourthAnswer.setAttribute('data-testid', 'fourthAnswer');
-    fourthAnswer.setAttribute('class', 'button button--lighter');
-    fourthAnswer.setAttribute('value', `${answers[3]}`);
-
-    container.appendChild(firstAnswer);
-    container.appendChild(secondAnswer);
-    container.appendChild(thirdAnswer);
-    container.appendChild(fourthAnswer);
-
+    let chosenAnswer;
+    let ids = ['firstAnswer', 'secondAnswer', 'thirdAnswer', 'fourthAnswer'];
+    let buttons = ids.map((idString, index) => {
+      let button = document.createElement('input');
+      button.setAttribute('type', 'button');
+      button.setAttribute('id', idString);
+      button.setAttribute('data-testid', idString);
+      button.setAttribute('class', 'button button--lighter');
+      button.setAttribute('value', `${answers[index]}`);
+      return button;
+    });
+    buttons.forEach((element) => {
+      container.appendChild(element);
+    });
     app.appendChild(container);
 
     const chosenButton = document.getElementById('answers-container').querySelectorAll('.button--lighter');
