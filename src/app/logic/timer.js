@@ -1,14 +1,15 @@
 import { updateTimeText, timeLeftText } from '../components/timeLeftText'
-
-let timeLeft;
+import { lightSaber, updateSaber } from '../components/lightSaber'
 
 export const startTime = (maxTime) => {
+    if(maxTime <= 0) return;
     timeLeftText(maxTime);
-    timeLeft = maxTime;
+    lightSaber(maxTime);
     const timer = setInterval(()=>{
         maxTime = maxTime - 1000;
         try {
             updateTimeText(maxTime);
+            updateSaber(maxTime);
         }
         catch (err) {
             clearInterval(timer);
