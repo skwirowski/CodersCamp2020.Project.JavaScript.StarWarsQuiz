@@ -17,11 +17,11 @@ test('Throw error when provided invalid parent argument', () => {
   };
   expect(function () {
     mainMenu(document.bodysss, getData);
-  }).toThrow(new Error("First argument isn't an object!"));
+  }).toThrow(new TypeError("First argument isn't an object!"));
 });
 
 test('Throw error when provided invalid callback argument', () => {
   expect(function () {
     mainMenu(document.body, 'getData');
-  }).toThrow(new Error("Callback argument isn't a function!"));
+  }).toThrow(new TypeError("Callback argument isn't a function!"));
 });

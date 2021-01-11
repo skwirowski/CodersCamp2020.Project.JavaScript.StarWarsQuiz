@@ -17,10 +17,10 @@ const createButton = (className, textContent, callback) => {
 
 const mainMenu = (parent, callback) => {
   if (typeof parent !== 'object') {
-    throw new Error("First argument isn't an object!");
+    throw new TypeError("First argument isn't an object!");
   }
   if (typeof callback !== 'function') {
-    throw new Error("Callback argument isn't a function!");
+    throw new TypeError("Callback argument isn't a function!");
   }
 
   //Created nav container

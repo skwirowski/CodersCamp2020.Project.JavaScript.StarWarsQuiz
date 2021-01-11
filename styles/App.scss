@@ -1,15 +1,23 @@
 @import './components/gameMode.scss';
-@import './components/gameHeader.css';
-@import './components/mainMenu.css';
+@import './components/gameHeader.scss';
+@import './components/mainMenu.scss';
 @import './components/image.scss';
+<<<<<<< HEAD:styles/App.css
 @import './components/redButton.css';
 @import './components/answersOnQuestion.scss';
 
+=======
+@import './components/redButton.scss';
+@import './components/modalGameOver.scss';
+@import './components/ranking.scss';
+@import './components/timeLeftText.scss';
+>>>>>>> main:styles/App.scss
 
 :root {
   --border-radius: 15px;
   --box-shadow-color: red;
-  --box-shadow-property: 0px 4px 4px rgba(0, 0, 0, 0.25),
+  --box-shadow-simple: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  --box-shadow-property: var(--box-shadow-simple),
     4px 4px 40px rgba(255, 0, 0, 0.9), inset 4px 5px 4px rgba(0, 0, 0, 0.5);
   --base-black: #000000;
   --base-white: #ffffff;
