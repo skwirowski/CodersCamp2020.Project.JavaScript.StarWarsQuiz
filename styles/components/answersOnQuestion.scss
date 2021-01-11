@@ -1,0 +1,11 @@
+.container-answers {
+    display: grid;
+    width: 1200px;
+    min-height: 350px;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 100px 100px; 
+    column-gap: 50px;
+    row-gap: 50px;
+    justify-content: center;
+    margin: 50px;
+}

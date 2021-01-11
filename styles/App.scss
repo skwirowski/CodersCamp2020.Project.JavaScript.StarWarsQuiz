@@ -2,10 +2,16 @@
 @import './components/gameHeader.scss';
 @import './components/mainMenu.scss';
 @import './components/image.scss';
+<<<<<<< HEAD:styles/App.css
+@import './components/redButton.css';
+@import './components/answersOnQuestion.scss';
+
+=======
 @import './components/redButton.scss';
 @import './components/modalGameOver.scss';
 @import './components/ranking.scss';
 @import './components/timeLeftText.scss';
+>>>>>>> main:styles/App.scss
 
 :root {
   --border-radius: 15px;
@@ -21,6 +27,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  outline: none;
 }
 
 body {
