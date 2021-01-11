@@ -11,9 +11,9 @@ test('Light saber component is correctly created', () => {
 
 test('Correct light saber width', () => {
     updateSaber(120000);
-    expect(screen.getByTestId('light').style.width).toBe('75%');
+    expect(screen.getByTestId('light').style.width).toBe('100%');
     updateSaber(60000);
-    expect(screen.getByTestId('light').style.width).toBe('37.5%');
+    expect(screen.getByTestId('light').style.width).toBe('50%');
     updateSaber(0);
     expect(screen.getByTestId('light').style.width).toBe('0%');
 });
