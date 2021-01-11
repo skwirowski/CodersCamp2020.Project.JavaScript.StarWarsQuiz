@@ -17,11 +17,3 @@ test('Correct light saber width', () => {
     updateSaber(0);
     expect(screen.getByTestId('light').style.width).toBe('0%');
 });
-
-
-
-
-// test('updating time is working correctly',() =>{
-//     updateTimeText(20000);
-//     expect(screen.getByTestId('timer-text').textContent).toBe('Time Left: 0m 20s');
-// })
