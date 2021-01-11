@@ -4,6 +4,9 @@ import { gameMode } from './gameMode'
 import { redButton } from './redButton'
 import { imageRecognizer } from './imageRecognizer'
 import { mainMenu } from './components/mainMenu'
+<<<<<<< HEAD
+import { answersOnQuestion } from './components/answersOnQuestion'
+=======
 import { startTime } from './logic/timer'
 import { generateQuestion } from './logic/generatingQuestions/generateQuestion'
 import { modalGameOver } from './components/modalGameOver';
@@ -67,16 +70,30 @@ const testDataComputer = {
   total: 2,
 };
 
+>>>>>>> main
 
 const getData = (element) => {
   return element;
 };
 
+<<<<<<< HEAD
+export const App = ({options}) => {
+    gameMode('Who is this Character?')
+    redButton('play the game');
+    imageRecognizer('c3RhdGljL2Fzc2V0cy9pbWcvbW9kZXMvcGVvcGxlLzM2LmpwZw==')
+    const getData = (element) => {
+      return element;
+    };
+    mainMenu(document.querySelector('.swquiz-header'), getData);
+    answersOnQuestion(['Luke', 'Angel', 'Becka', 'John'], 'Luke');
+}
+=======
 const modalSubmitCallback = (e) => {
   e.preventDefault();
   console.log('MAY THE FORCE BE WITH YOU!');
   document.querySelector('.swquiz-modal').style.display = 'none';
 };
+>>>>>>> main
 
 export const App = ({ options }) => {
   gameMode('Who is this Character?');
