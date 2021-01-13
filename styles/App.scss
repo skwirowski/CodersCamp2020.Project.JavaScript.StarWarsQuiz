@@ -2,16 +2,8 @@
 @import './components/gameHeader.scss';
 @import './components/mainMenu.scss';
 @import './components/image.scss';
-<<<<<<< HEAD:styles/App.css
-@import './components/redButton.css';
-@import './components/answersOnQuestion.scss';
-
-=======
 @import './components/redButton.scss';
-@import './components/modalGameOver.scss';
-@import './components/ranking.scss';
-@import './components/timeLeftText.scss';
->>>>>>> main:styles/App.scss
+@import './components/answersOnQuestion.scss';
 
 :root {
   --border-radius: 15px;
