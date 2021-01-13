@@ -1,3 +1,5 @@
+import { createIconHeader } from "./iconHeader"
+
 function createEntry(place, scoreEntry) {
   let nickname = '-',
     correctNumber = '-',
@@ -41,19 +43,9 @@ function createRankingHeader() {
   return div;
 }
 
-function createHeader() {
-  let div = document.createElement('div');
-  div.className = 'icon-header';
-  div.setAttribute('data-testid', 'icon-header');
-  div.innerHTML = `
-        <img data-testid='ranking-icon' src="./static/assets/ui/contacts_24px.svg" alt="Ranking icon">
-        <p>Mode Ranking</p>
-    `;
-  return div;
-}
-
 function ranking(scoreList) {
   let parent = document.querySelector('.ranking-box');
+  parent.classList.add('box');
 
   let placeholders = [];
   const places = ['1st', '2nd', '3rd'];
@@ -62,7 +54,7 @@ function ranking(scoreList) {
     placeholders.push(createEntry(place, scoreList[index]));
   });
 
-  parent.appendChild(createHeader());
+  parent.appendChild(createIconHeader("Ranking", "ranking-icon", "./static/assets/icons/contacts_24px.svg", "Ranking icon"));
   parent.appendChild(createRankingHeader());
   placeholders.forEach((item) => parent.appendChild(item));
 }

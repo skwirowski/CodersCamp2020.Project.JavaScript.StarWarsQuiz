@@ -15,6 +15,7 @@ export const answersOnQuestion = (answers, correctAnswer, checkingAnswer) => {
       button.setAttribute('value', `${answers[index]}`);
       return button;
     });
+    
     buttons.forEach((element) => {
       container.appendChild(element);
     });
@@ -22,12 +23,11 @@ export const answersOnQuestion = (answers, correctAnswer, checkingAnswer) => {
 
     const chosenButton = document.getElementById('answers-container').querySelectorAll('.button--lighter');
     
-    for(let i = 0; i < chosenButton.length; i++) {
+    for (let i = 0; i < chosenButton.length; i++) {
         chosenButton[i].onclick = checkingAnswer = () => {
-            console.log(chosenButton[i].value)
             chosenAnswer = chosenButton[i].value;
-            console.log(correctAnswer === chosenAnswer);
-            if(correctAnswer === chosenAnswer) {
+
+            if (correctAnswer === chosenAnswer) {
                 chosenButton[i].classList.add('button--correct');
                 window.setTimeout('window.location.reload()', 500);
             } else {
