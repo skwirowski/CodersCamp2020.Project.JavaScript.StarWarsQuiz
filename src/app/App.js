@@ -7,7 +7,8 @@ import { mainMenu } from './components/mainMenu'
 import { answersOnQuestion } from './components/answersOnQuestion'
 import { startTime } from './logic/timer'
 import { generateQuestion } from './logic/generatingQuestions/generateQuestion'
-import { modalGameOver } from './components/modalGameOver';
+import { modalGameOver } from './components/modalGameOver'
+import { whiteButton } from './whiteButton';
 
 const testDataHuman = {
   q1: {
@@ -82,6 +83,7 @@ const modalSubmitCallback = (e) => {
 export const App = ({ options }) => {
   gameMode('Who is this Character?');
   redButton('play the game');
+  whiteButton('static/assets/icons/contacts_24px.png','Hall of fame');
   imageRecognizer('c3RhdGljL2Fzc2V0cy9pbWcvbW9kZXMvcGVvcGxlLzM2LmpwZw==');
   mainMenu(document.querySelector('.swquiz-header'), getData);
   modalGameOver(
