@@ -1,9 +1,7 @@
 export class playerComputer {
     //possibleAnswers should be array type
     chooseRandom(possibleAnswers) {
-        let min = 0;
-        let max = 3;
-        let random = Math.floor(Math.random() * (max - min + 1)) + min;
+        let random = Math.floor(Math.random() * (3 - 0 + 1)) + 0;
         let computerAnswer = possibleAnswers[random];
         return computerAnswer;
     }
