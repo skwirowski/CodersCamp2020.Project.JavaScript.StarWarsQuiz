@@ -97,5 +97,5 @@ export const App = ({ options }) => {
     modalSubmitCallback,
   );
   quiz(options.quizMaxTime, menuTarget)
-  generateQuestion('people').then(res=> console.log(res))
+  //generateQuestion('starships').then(res=> console.log(res))
 };
