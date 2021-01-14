@@ -1,13 +1,13 @@
 
 import { isAnswerCorrect } from './components/isAnswerCorrect'
-import { gameMode } from './gameMode'
+import { gameMode } from './components/gameMode'
 import { redButton } from './redButton'
 import { imageRecognizer } from './imageRecognizer'
 import { mainMenu } from './components/mainMenu'
 import { answersOnQuestion } from './components/answersOnQuestion'
-import { startTime } from './logic/timer'
 import { generateQuestion } from './logic/generatingQuestions/generateQuestion'
 import { modalGameOver } from './components/modalGameOver';
+import { quiz } from './logic/quiz'
 
 const testDataHuman = {
   q1: {
@@ -70,8 +70,11 @@ const testDataComputer = {
 
 
 const getData = (element) => {
+ // console.log(element.innerText)
   return element;
 };
+
+
 
 const modalSubmitCallback = (e) => {
   e.preventDefault();
@@ -90,6 +93,6 @@ export const App = ({ options }) => {
     testDataComputer,
     modalSubmitCallback,
   );
-  startTime(options.quizMaxTime)
+  quiz(options.quizMaxTime)
   generateQuestion('people').then(res=> console.log(res))
 };
