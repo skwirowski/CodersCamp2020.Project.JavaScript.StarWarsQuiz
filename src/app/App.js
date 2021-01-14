@@ -68,11 +68,14 @@ const testDataComputer = {
   total: 2,
 };
 
-
+var menuTarget;
 const getData = (element) => {
- // console.log(element.innerText)
+  //console.log(element.innerText)
+  menuTarget = element;
   return element;
 };
+
+console.log(menuTarget)
 
 
 
@@ -93,6 +96,6 @@ export const App = ({ options }) => {
     testDataComputer,
     modalSubmitCallback,
   );
-  quiz(options.quizMaxTime)
+  quiz(options.quizMaxTime, menuTarget)
   generateQuestion('people').then(res=> console.log(res))
 };
