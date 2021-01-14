@@ -1,8 +1,14 @@
-import { doc } from 'prettier';
-import { startTime } from './logic/timer';
-import { generateQuestion } from './logic/generatingQuestions/generateQuestion';
-import { modalGameOver } from './components/modalGameOver';
-import { mainWindow } from './components/mainWindow';
+
+import { isAnswerCorrect } from './components/isAnswerCorrect'
+import { gameMode } from './gameMode'
+import { redButton } from './redButton'
+import { imageRecognizer } from './imageRecognizer'
+import { mainMenu } from './components/mainMenu'
+import { answersOnQuestion } from './components/answersOnQuestion'
+import { startTime } from './logic/timer'
+import { generateQuestion } from './logic/generatingQuestions/generateQuestion'
+import { modalGameOver } from './components/modalGameOver'
+import { whiteButton } from './whiteButton';
 
 const testDataHuman = {
   q1: {
