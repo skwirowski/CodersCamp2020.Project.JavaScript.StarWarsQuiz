@@ -1,4 +1,4 @@
-export const answersOnQuestion = (answers, correctAnswer, checkingAnswer) => {
+export const answersOnQuestion = (answers, correctAnswer, checkingAnswer, callback) => {
     const app = document.querySelector('#swquiz-app');
     const container = document.createElement('div');
     container.setAttribute('id', 'answers-container');
@@ -29,18 +29,22 @@ export const answersOnQuestion = (answers, correctAnswer, checkingAnswer) => {
 
             if (correctAnswer === chosenAnswer) {
                 chosenButton[i].classList.add('button--correct');
+              //  console.log(chosenButton[i].value) /// to przekezać do player.answerOnQuestion()
                 window.setTimeout(function(){
                     //container.style.display = 'none'
                     container.remove()
             }, 1900);
-            return true;
+            callback(this);
+         //   return chosenButton[i].value;
             } else {
                 chosenButton[i].classList.add('button--wrong');
+             //   console.log(chosenButton[i].value)
                 window.setTimeout(function(){
                  //   container.style.display = 'none'
                     container.remove()
                 }, 1900);
-                return false;
+                callback(this);
+              //  return chosenButton[i].value;
                 //window.setTimeout('window.location.reload()', 500);
             }
         } 

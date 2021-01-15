@@ -12,34 +12,43 @@ const quiz = (maxTime = 120000, target = "people") =>{
     startButton.addEventListener("click", async function(){
         console.log("Start rozgrywki")
         const player = new PlayerHuman;
-       // player.answerOnQuestion("moja odpowiedź")
-      //  console.log(player.playerAnswer);
+        player.answerOnQuestion("moja odpowiedź")
+        console.log(player.getAnswer());
         startTime(maxTime)
+        let start = true;
         const timer = setInterval(()=>{
             maxTime = maxTime - 1000;
-            if(maxTime <= 0) {clearInterval(timer)
-                console.log(`Powinien zaczekać ${player.getAnswer()}`); 
+            
+            if(maxTime <= 0) {
+            clearInterval(timer)
+            start = false;
             console.log("koniec gry")};
         }, 1000)
-        
+        const getPlayerAnswer=(element)=>{
+            console.log(element)
+            return element
+        }
        await generateQuestion(activeTarget.toLocaleLowerCase()).then(res=> {            
          //  player.answerOnQuestion(answersOnQuestion(res.answers, res.rightAnswer))
-           answersOnQuestion(res.answers, res.rightAnswer)
+           answersOnQuestion(res.answers, res.rightAnswer, '', getPlayerAnswer) // jak przypisać returna do zmiennej - musi poczekać na ta funkcję i dopiero
+           //przypisać do zmiennej, jak to zrobić?
            console.log(res.rightAnswer);     
         })
        // let answerButtons = document.querySelector('.container-answers');
        //let answerButtons = document.querySelector('.container-answers');
         const askNextQuestion = () =>{
-            let answerButtons = document.querySelector('.container-answers');
-            answerButtons.addEventListener("click", function(){
-                window.setTimeout(function(){
-                    generateQuestion(activeTarget.toLocaleLowerCase()).then(res=> {            
-                        player.answerOnQuestion(answersOnQuestion(res.answers, res.rightAnswer))  
-                    })
-                }, 2000);
-            })
-            answerButtons.removeEventListener("click");
-            askNextQuestion()
+            if(start){
+                let answerButtons = document.querySelector('.container-answers');
+                answerButtons.addEventListener("click", function(){
+                    window.setTimeout(function(){
+                        generateQuestion(activeTarget.toLocaleLowerCase()).then(res=> {            
+                            answersOnQuestion(res.answers, res.rightAnswer, '', getPlayerAnswer)
+                            askNextQuestion()
+                        })
+                    }, 2000);
+                })
+            //    answerButtons.removeEventListener("click");
+            }
         }
        // let answerButtons = document.querySelector('.container-answers');
        askNextQuestion()
