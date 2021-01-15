@@ -12,7 +12,8 @@ const quiz = (maxTime = 120000, target = "people") =>{
     startButton.addEventListener("click", async function(){
         console.log("Start rozgrywki")
         const player = new PlayerHuman;
-        player.answerOnQuestion("moja odpowiedź")
+        player.setAnswerOnQuestion("moja odpowiedź")
+        player.playerAnswer = "inna"
         console.log(player.getAnswer());
         startTime(maxTime)
         let start = true;
@@ -24,13 +25,10 @@ const quiz = (maxTime = 120000, target = "people") =>{
             start = false;
             console.log("koniec gry")};
         }, 1000)
-        const getPlayerAnswer=(element)=>{
-            console.log(element)
-            return element
-        }
-       await generateQuestion(activeTarget.toLocaleLowerCase()).then(res=> {            
+
+       await generateQuestion(activeTarget.toLocaleLowerCase()).then(async res=> {            
          //  player.answerOnQuestion(answersOnQuestion(res.answers, res.rightAnswer))
-           answersOnQuestion(res.answers, res.rightAnswer, '', getPlayerAnswer) // jak przypisać returna do zmiennej - musi poczekać na ta funkcję i dopiero
+           player.setAnswerOnQuestion(await answersOnQuestion(res.answers, res.rightAnswer)) // jak przypisać returna do zmiennej - musi poczekać na ta funkcję i dopiero
            //przypisać do zmiennej, jak to zrobić?
            console.log(res.rightAnswer);     
         })
@@ -41,8 +39,10 @@ const quiz = (maxTime = 120000, target = "people") =>{
                 let answerButtons = document.querySelector('.container-answers');
                 answerButtons.addEventListener("click", function(){
                     window.setTimeout(function(){
-                        generateQuestion(activeTarget.toLocaleLowerCase()).then(res=> {            
-                            answersOnQuestion(res.answers, res.rightAnswer, '', getPlayerAnswer)
+                        generateQuestion(activeTarget.toLocaleLowerCase()).then(async res=> {            
+                      //      player.setAnswerOnQuestion(await answersOnQuestion(res.answers, res.rightAnswer))
+                            player.playerAnswer = await answersOnQuestion(res.answers, res.rightAnswer)
+                            player.getAnswer()
                             askNextQuestion()
                         })
                     }, 2000);

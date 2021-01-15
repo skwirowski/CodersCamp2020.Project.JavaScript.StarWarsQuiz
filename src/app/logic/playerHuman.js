@@ -11,7 +11,7 @@ export class PlayerHuman {
     this.countAnswers = this.countAnswers + 1;
   } 
 
-  answerOnQuestion(answer){
+  setAnswerOnQuestion(answer){
     this.playerAnswer = answer;
   }
   

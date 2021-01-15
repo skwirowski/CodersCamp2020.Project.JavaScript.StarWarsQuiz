@@ -1,4 +1,4 @@
-export const answersOnQuestion = (answers, correctAnswer, checkingAnswer, callback) => {
+export const answersOnQuestion = (answers, correctAnswer, checkingAnswer) => {
     const app = document.querySelector('#swquiz-app');
     const container = document.createElement('div');
     container.setAttribute('id', 'answers-container');
@@ -33,9 +33,10 @@ export const answersOnQuestion = (answers, correctAnswer, checkingAnswer, callba
                 window.setTimeout(function(){
                     //container.style.display = 'none'
                     container.remove()
-            }, 1900);
-            callback(this);
-         //   return chosenButton[i].value;
+                 }, 1900);
+                 return new Promise(resolve => {
+                     resolve(chosenButton[i].value)
+                 })
             } else {
                 chosenButton[i].classList.add('button--wrong');
              //   console.log(chosenButton[i].value)
@@ -43,8 +44,10 @@ export const answersOnQuestion = (answers, correctAnswer, checkingAnswer, callba
                  //   container.style.display = 'none'
                     container.remove()
                 }, 1900);
-                callback(this);
-              //  return chosenButton[i].value;
+ 
+                return new Promise(resolve => {
+                    resolve(chosenButton[i].value)
+                })
                 //window.setTimeout('window.location.reload()', 500);
             }
         } 
