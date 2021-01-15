@@ -1,7 +1,4 @@
-import { generateQuestion } from '../logic/generatingQuestions/generateQuestion'
-import { PlayerHuman } from '../logic/playerHuman'
-
-export const answersOnQuestion = (answers, correctAnswer, checkingAnswer, target) => {
+export const answersOnQuestion = (answers, correctAnswer, checkingAnswer) => {
     const app = document.querySelector('#swquiz-app');
     const container = document.createElement('div');
     container.setAttribute('id', 'answers-container');
@@ -25,50 +22,35 @@ export const answersOnQuestion = (answers, correctAnswer, checkingAnswer, target
     app.appendChild(container);
 
     const chosenButton = document.getElementById('answers-container').querySelectorAll('.button--lighter');
-    chosenButton.forEach(button=>{
-        button.addEventListener('click', function(){
-            chosenAnswer = button.value;
-            if (correctAnswer === chosenAnswer) {
-                button.classList.add('button--correct');
-                window.setTimeout(function(){
-                    container.remove()
-                 }, 1000);
-            } else {
-                button.classList.add('button--wrong');
-                window.setTimeout(function(){
-                       container.remove()
-                   }, 1000);
-            }
-            window.setTimeout(function(){
-                generateQuestion(target).then(res=> {
-                    answersOnQuestion(res.answers, res.rightAnswer, '', target)
-                })
-            }, 1000)
-        })
-    })
     
-
-   /* for (let i = 0; i < chosenButton.length; i++) {
+    for (let i = 0; i < chosenButton.length; i++) {
         chosenButton[i].onclick = checkingAnswer = () => {
             chosenAnswer = chosenButton[i].value;
 
             if (correctAnswer === chosenAnswer) {
                 chosenButton[i].classList.add('button--correct');
+              //  console.log(chosenButton[i].value) /// to przekezać do player.answerOnQuestion()
                 window.setTimeout(function(){
+                    //container.style.display = 'none'
                     container.remove()
                  }, 1900);
+                 return new Promise(resolve => {
+                     resolve(chosenButton[i].value)
+                 })
             } else {
                 chosenButton[i].classList.add('button--wrong');
+             //   console.log(chosenButton[i].value)
                 window.setTimeout(function(){
-                       container.remove()
-                   }, 1900);
-            }
-            window.setTimeout(function(){
-                generateQuestion(target).then(res=> {
-                    answersOnQuestion(res.answers, res.rightAnswer, '', target)
+                 //   container.style.display = 'none'
+                    container.remove()
+                }, 1900);
+ 
+                return new Promise(resolve => {
+                    resolve(chosenButton[i].value)
                 })
-            }, 1900)
-        }
-    } */
+                //window.setTimeout('window.location.reload()', 500);
+            }
+        } 
+    }
     
 }
