@@ -1,19 +1,10 @@
 export class PlayerHuman {
   constructor(){
-    this.playerAnswer = "";
-    this.countAnswers = 0;
-    this.correctAnswers = 0;
+    this.playerAnswer = [];
   }
-  addAnswer(correct){
-    if(correct){
-      this.correctAnswers = this.correctAnswers + 1
-    }
-    this.countAnswers = this.countAnswers + 1;
+  addAnswer(answer){
+    this.playerAnswer.push(answer);
   } 
-
-  setAnswerOnQuestion(answer){
-    this.playerAnswer = answer;
-  }
   
   getAnswer(){
     return this.playerAnswer

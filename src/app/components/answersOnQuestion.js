@@ -1,8 +1,12 @@
 import { generateQuestion } from '../logic/generatingQuestions/generateQuestion'
 import { PlayerHuman } from '../logic/playerHuman'
+import { playerAnswers, player1 } from '../App'
+import { isAnswerCorrect } from '../components/isAnswerCorrect'
 
 export const answersOnQuestion = (answers, correctAnswer, checkingAnswer, target) => {
     const app = document.querySelector('#swquiz-app');
+   /* player.countAnswers = player.countAnswers++
+    console.log("Przekazany obiekt " + player.countAnswers) */
     const container = document.createElement('div');
     container.setAttribute('id', 'answers-container');
     container.setAttribute('data-testid', 'answers-container');
@@ -28,6 +32,9 @@ export const answersOnQuestion = (answers, correctAnswer, checkingAnswer, target
     chosenButton.forEach(button=>{
         button.addEventListener('click', function(){
             chosenAnswer = button.value;
+            playerAnswers.push({ans: chosenAnswer, truthy: isAnswerCorrect(chosenAnswer, correctAnswer)})
+          //  player1.addAnswer({ans: chosenAnswer, truthy: isAnswerCorrect(chosenAnswer, correctAnswer)})
+           // console.log(player1.getAnswer())
             if (correctAnswer === chosenAnswer) {
                 button.classList.add('button--correct');
                 window.setTimeout(function(){
