@@ -1,11 +1,24 @@
 export class PlayerHuman {
-  /*constructor(playerAnswer, playerAnswers){
-    this.playerAnswer = playerAnswer;
-    this.playerAnswers = playerAnswers;
+  constructor(){
+    this.playerAnswer = "";
+    this.countAnswers = 0;
+    this.correctAnswers = 0;
   }
-  addAnswer(){
+  addAnswer(correct){
+    if(correct){
+      this.correctAnswers = this.correctAnswers + 1
+    }
+    this.countAnswers = this.countAnswers + 1;
+  } 
 
-  } */
+  answerOnQuestion(answer){
+    this.playerAnswer = answer;
+  }
+  
+  getAnswer(){
+    return this.playerAnswer
+  }
+
   askQuestion(question, askedQuestion) {
     if (askedQuestion) {
       return askedQuestion(question);
@@ -14,11 +27,11 @@ export class PlayerHuman {
     }
   }
 
-  answerOnQuestion(answer, answerdOnQuestion) {
+ /* answerOnQuestion(answer, answerdOnQuestion) {
     if (answerdOnQuestion) {
       answerdOnQuestion(answer);
     } else {
       throw new TypeError('Player should answer on asked question');
     }
-  }
+  } */
 }

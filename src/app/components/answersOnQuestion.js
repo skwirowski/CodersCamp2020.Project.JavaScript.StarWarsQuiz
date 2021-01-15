@@ -29,12 +29,21 @@ export const answersOnQuestion = (answers, correctAnswer, checkingAnswer) => {
 
             if (correctAnswer === chosenAnswer) {
                 chosenButton[i].classList.add('button--correct');
-                window.setTimeout('window.location.reload()', 500);
+                window.setTimeout(function(){
+                    //container.style.display = 'none'
+                    container.remove()
+            }, 1900);
+            return true;
             } else {
                 chosenButton[i].classList.add('button--wrong');
-                window.setTimeout('window.location.reload()', 500);
+                window.setTimeout(function(){
+                 //   container.style.display = 'none'
+                    container.remove()
+                }, 1900);
+                return false;
+                //window.setTimeout('window.location.reload()', 500);
             }
-        }
+        } 
     }
     
 }

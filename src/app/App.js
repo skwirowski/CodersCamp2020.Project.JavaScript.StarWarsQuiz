@@ -68,20 +68,11 @@ const testDataComputer = {
   total: 2,
 };
 
-//var menuTarget;
-//var element = "people"
-//var element2 = "people"
-/*const getData = (element) => {
-  //console.log(element.innerText) // jak nie próbuje przypisywać wyniku tej funkcji do żadnej zmiennej to elegancko w konsoli się wyświetli jaki element jest teraz wybrany
-  quiz(options.quizMaxTime, element)
+let target;
+const getData = (element) => {
+  target = element.innerText;
   return element;
-}; */
-
-
-//menuTarget = getData(element) //jak przypiszę do tej zmiennej people, żeby nie było undefined, to się nie zmienia już w ogóle i ciągle jest jako people
-//menuTarget = getData(element || element2) // w ogóle nie odpali się aplikacja, będzie błąd, że element is not defined
-
-//console.log(menuTarget)
+}
 
 
 
@@ -95,15 +86,12 @@ export const App = ({ options }) => {
   gameMode('Who is this Character?');
   redButton('play the game');
   imageRecognizer('c3RhdGljL2Fzc2V0cy9pbWcvbW9kZXMvcGVvcGxlLzM2LmpwZw==');
-  const getData = (element) => {
-    const startButton = document.querySelector('#red-button');
-    startButton.addEventListener("click", function(){
-      quiz(options.quizMaxTime, element.innerText)
-    })
-    return element;
-  } 
+
   mainMenu(document.querySelector('.swquiz-header'), getData);
- // mainMenu(document.querySelector('.swquiz-header'), getData);
+ /*const startButton = document.querySelector('#red-button');
+ startButton.addEventListener("click", function(){ */
+   quiz(options.quizMaxTime, target)
+ //}) 
   modalGameOver(
     document.querySelector('#swquiz-app'),
     testDataHuman,
