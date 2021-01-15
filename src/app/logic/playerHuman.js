@@ -1,4 +1,11 @@
 export class PlayerHuman {
+  /*constructor(playerAnswer, playerAnswers){
+    this.playerAnswer = playerAnswer;
+    this.playerAnswers = playerAnswers;
+  }
+  addAnswer(){
+
+  } */
   askQuestion(question, askedQuestion) {
     if (askedQuestion) {
       return askedQuestion(question);
