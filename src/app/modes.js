@@ -1,7 +1,7 @@
-import { getRule } from './ruleConstantStrings'
+import { getRule } from './ruleConstantStrings';
 import { renderRanking } from './components/ranking';
-import { getScores } from './logic/localStorageScore'
-import { getGameModeQuestion } from './gameMode'
+import { getScores } from './logic/localStorageScore';
+import { getGameModeQuestion } from './gameMode';
 
 export const VEHICLE_MODE = 'Vehicles';
 export const PEOPLE_MODE = 'People';
@@ -21,7 +21,6 @@ export function setGameMode(mode) {
 export function getGameMode() {
   return window.globalThis.activeGameMode;
 }
-
 
 function changeRules(mode) {
   let ruleBox = document.getElementById('game-rules-box');

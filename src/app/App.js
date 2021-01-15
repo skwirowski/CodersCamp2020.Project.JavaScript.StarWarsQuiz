@@ -1,6 +1,6 @@
 import { doc } from 'prettier';
-import { startTime } from './logic/timer'
-import { generateQuestion } from './logic/generatingQuestions/generateQuestion'
+import { startTime } from './logic/timer';
+import { generateQuestion } from './logic/generatingQuestions/generateQuestion';
 import { modalGameOver } from './components/modalGameOver';
 import { mainWindow } from './components/mainWindow';
 
@@ -32,7 +32,6 @@ const testDataHuman = {
   correct: 1,
   total: 2,
 };
-
 
 const testDataComputer = {
   q1: {
@@ -80,5 +79,4 @@ export const App = ({ options }) => {
   // );
   // startTime(options.quizMaxTime)
   // generateQuestion('people').then(res=> console.log(res))
-
 };
