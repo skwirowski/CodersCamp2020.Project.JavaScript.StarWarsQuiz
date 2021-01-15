@@ -8,7 +8,7 @@ import { answersOnQuestion } from './components/answersOnQuestion'
 import { startTime } from './logic/timer'
 import { generateQuestion } from './logic/generatingQuestions/generateQuestion'
 import { modalGameOver } from './components/modalGameOver';
-
+import { modalWindow } from './components/modalWindow';
 const testDataHuman = {
   q1: {
     answer: 'Test',
@@ -84,12 +84,20 @@ export const App = ({ options }) => {
   redButton('play the game');
   imageRecognizer('c3RhdGljL2Fzc2V0cy9pbWcvbW9kZXMvcGVvcGxlLzM2LmpwZw==');
   mainMenu(document.querySelector('.swquiz-header'), getData);
-  modalGameOver(
+  /*modalGameOver(
     document.querySelector('#swquiz-app'),
     testDataHuman,
     testDataComputer,
     modalSubmitCallback,
-  );
+  );*/
+  const testDiv = document.createElement('div');
+  const TestCloseFunc = () => {
+    let removeIt = document.getElementById('modalWindow');
+    removeIt.remove()
+    document.body.classList.remove('darkerBody');
+  }
+  
+  modalWindow(testDiv, TestCloseFunc);
   startTime(options.quizMaxTime)
   generateQuestion('people').then(res=> console.log(res))
 };
