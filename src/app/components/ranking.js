@@ -50,7 +50,7 @@ function createRankingHeader() {
 function ranking(scoreList) {
   let parent = document.getElementById('swquiz-game-body');
 
-  let ranking = createDiv('ranking-box', 'ranking-box');
+  let ranking = createDiv('box', 'ranking-box');
 
   let placeholders = [];
   const places = ['1st', '2nd', '3rd'];
