@@ -1,4 +1,8 @@
 import { createIconHeader } from "./iconHeader"
+import createDiv from "../utils/createDiv";
+import { getScores } from '../logic/localStorageScore'
+import { attachRulesButtonCallback } from './gameRules';
+import { getGameMode } from "../modes"
 
 function createEntry(place, scoreEntry) {
   let nickname = '-',
@@ -46,8 +50,7 @@ function createRankingHeader() {
 function ranking(scoreList) {
   let parent = document.getElementById('swquiz-game-body');
 
-  let ranking = document.createElement('div');
-  ranking.classList.add('ranking-box');
+  let ranking = createDiv('ranking-box', 'ranking-box');
 
   let placeholders = [];
   const places = ['1st', '2nd', '3rd'];
@@ -63,4 +66,26 @@ function ranking(scoreList) {
   parent.appendChild(ranking);
 }
 
-export { ranking };
+function renderRanking(mode) {
+
+  attachRulesButtonCallback();
+
+  // Remove children of swquiz-game-body
+  let gameBodyElement = document.getElementById('swquiz-game-body');
+  gameBodyElement.innerHTML = '';
+
+  // Render ranking for selected mode
+  ranking(getScores(mode));
+}
+
+function attachRankingButtonCallback() {
+  let whiteButton = document.getElementById('white-button');
+  if (whiteButton) {
+    whiteButton.textContent  = "Hall of fame";
+    whiteButton.addEventListener('click', function() {
+      renderRanking(getGameMode());
+    }, { once: true } );
+  }
+}
+
+export { renderRanking, attachRankingButtonCallback };

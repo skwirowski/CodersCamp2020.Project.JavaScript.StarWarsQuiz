@@ -10,12 +10,10 @@
 }
 
 .swquiz-row-left {
-  background-color: blue;
   grid-area: swquiz-row-left;
 }
 
 .swquiz-row-right {
-  background-color: green;
   grid-area: swquiz-row-right;
 }
 
@@ -25,6 +23,7 @@
   display: grid;
 
   grid-template-rows: 0.1fr 0.8fr 0.1fr;
+  grid-template-columns: 0.5fr 0.5fr;
   grid-template-areas:
     'swquiz-game-header       swquiz-game-header'
     'swquiz-game-body         swquiz-game-body'

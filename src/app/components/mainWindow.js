@@ -1,13 +1,10 @@
 import createDiv from '../utils/createDiv';
 import { redButton, whiteButton } from '../redButton'; // TODO: remove white button
 import { gameMode } from '../gameMode';
-import { ranking } from '../components/ranking';
-import { getScores } from '../logic/localStorageScore';
 import { getGameMode, setGameMode } from '../modes';
 import { mainMenu } from '../components/mainMenu';
 import { imageRecognizer } from '../imageRecognizer';
-import { gameRules } from './gameRules';
-import { getRule } from '../ruleConstantStrings';
+import { renderRules } from './gameRules';
 
 function fillMainWindowHTML() {
   let quizBody = document.getElementById('swquiz-body');
@@ -32,18 +29,6 @@ function fillMainWindowHTML() {
   quizBody.appendChild(quizGame);
 }
 
-function hallOfFameCallback(event) {
-  // Remove children of swquiz-game-body
-  let gameBodyElement = document.getElementById('swquiz-game-body');
-
-  gameBodyElement.childNodes.forEach((child) => {
-    gameBodyElement.removeChild(child);
-  });
-
-  // Render ranking for selected mode
-  ranking(getScores(getGameMode()));
-}
-
 function mainWindow() {
   fillMainWindowHTML();
 
@@ -53,12 +38,10 @@ function mainWindow() {
   whiteButton('Hall of fame');
   gameMode('Who is this Character?');
 
-  gameRules(getRule(getGameMode()));
+  renderRules(getGameMode());
 
   imageRecognizer('c3RhdGljL2Fzc2V0cy9pbWcvbW9kZXMvcGVvcGxlLzM2LmpwZw==');
 
-  let hallOfFameButton = document.getElementById('white-button');
-  hallOfFameButton.addEventListener('click', hallOfFameCallback);
 }
 
 export { mainWindow };
