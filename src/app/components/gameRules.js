@@ -1,14 +1,18 @@
+import createDiv from "../utils/createDiv";
 import { createIconHeader } from "./iconHeader"
 
 function gameRules(textToShow) {
   let parent = document.querySelector('.swquiz-game-body');
-  parent.classList.add('box');
+
+  let div = createDiv('game-rules-box', 'game-rules-box');
+  div.classList.add('box');
 
   let textElement = document.createElement('p');
   textElement.textContent = textToShow || "";
 
-  parent.appendChild(createIconHeader("Mode Rules", "rules-icon", "./static/assets/icons/school_24px.svg", "Rules icon"));
-  parent.appendChild(textElement);
+  div.appendChild(createIconHeader("Mode Rules", "rules-icon", "./static/assets/icons/school_24px.svg", "Rules icon"));
+  div.appendChild(textElement);
+  parent.appendChild(div);
 }
 
 export { gameRules };

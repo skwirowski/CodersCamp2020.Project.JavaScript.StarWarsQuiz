@@ -35,9 +35,10 @@ function fillMainWindowHTML() {
 function hallOfFameCallback(event) {
   // Remove children of swquiz-game-body
   let gameBodyElement = document.getElementById('swquiz-game-body');
-  gameBodyElement.childNodes.forEach((child) =>
-    gameBodyElement.removeChild(child),
-  );
+
+  gameBodyElement.childNodes.forEach((child) => {
+    gameBodyElement.removeChild(child);
+  });
 
   // Render ranking for selected mode
   ranking(getScores(getGameMode()));

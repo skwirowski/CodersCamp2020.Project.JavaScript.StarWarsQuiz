@@ -44,8 +44,10 @@ function createRankingHeader() {
 }
 
 function ranking(scoreList) {
-  let parent = document.querySelector('.ranking-box');
-  parent.classList.add('box');
+  let parent = document.getElementById('swquiz-game-body');
+
+  let ranking = document.createElement('div');
+  ranking.classList.add('ranking-box');
 
   let placeholders = [];
   const places = ['1st', '2nd', '3rd'];
@@ -54,7 +56,7 @@ function ranking(scoreList) {
     placeholders.push(createEntry(place, scoreList[index]));
   });
 
-  ranking.appendChild(createHeader());
+  ranking.appendChild(createIconHeader('Mode Ranking', 'ranking-icon', './static/assets/ui/contacts_24px.svg', 'Ranking ico'));
   ranking.appendChild(createRankingHeader());
   placeholders.forEach((item) => ranking.appendChild(item));
 

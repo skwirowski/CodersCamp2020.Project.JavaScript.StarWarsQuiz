@@ -5,7 +5,7 @@ import '@testing-library/jest-dom/extend-expect';
 import { PEOPLE_MODE } from '../../../src/app/modes';
 
 test('screen has four items of ranking-row', () => {
-  document.body.innerHTML = `<div id="swquiz-game-body" class="swquiz-game-bodyx"></div>`;
+  document.body.innerHTML = `<div id="swquiz-game-body" class="swquiz-game-body"></div>`;
   ranking(getScores());
 
   let rows = document.querySelectorAll('.ranking-row');
