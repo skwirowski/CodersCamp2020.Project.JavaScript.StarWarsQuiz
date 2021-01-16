@@ -1,12 +1,12 @@
 import { getScores, saveScore } from '../../../src/app/logic/localStorageScore';
-import { ranking } from '../../../src/app/components/ranking';
+import { renderRanking } from '../../../src/app/components/ranking';
 import { screen } from '@testing-library/dom';
 import '@testing-library/jest-dom/extend-expect';
 import { PEOPLE_MODE } from '../../../src/app/modes';
 
 test('screen has four items of ranking-row', () => {
-  document.body.innerHTML = `<div id="ranking-box" class="ranking-box"></div>`;
-  ranking(getScores());
+  document.body.innerHTML = `<div id="swquiz-game-body" class="swquiz-game-body"></div>`;
+  renderRanking(PEOPLE_MODE);
 
   let rows = document.querySelectorAll('.ranking-row');
   expect(rows.length).toBe(4);
@@ -14,18 +14,18 @@ test('screen has four items of ranking-row', () => {
 });
 
 test('there is an img tag for icon', () => {
-  document.body.innerHTML = `<div id="ranking-box" class="ranking-box"></div>`;
-  ranking(getScores());
+  document.body.innerHTML = `<div id="swquiz-game-body" class="swquiz-game-body"></div>`;
+  renderRanking(PEOPLE_MODE);
 
   expect(screen.getByTestId('ranking-icon')).toBeTruthy();
 });
 
 test('there is Lucy and Nancy in HTML', () => {
-  document.body.innerHTML = `<div id="ranking-box" class="ranking-box"></div>`;
+  document.body.innerHTML = `<div id="swquiz-game-body" class="swquiz-game-body"></div>`;
   saveScore(PEOPLE_MODE, 'Nancy', 12, 30);
   saveScore(PEOPLE_MODE, 'Lucy', 14, 30);
 
-  ranking(getScores(PEOPLE_MODE));
+  renderRanking(PEOPLE_MODE);
 
   let nicknames = document.querySelectorAll('.nickname');
   let scores = document.querySelectorAll('.score');

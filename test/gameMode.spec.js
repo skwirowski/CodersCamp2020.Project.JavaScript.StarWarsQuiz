@@ -4,7 +4,7 @@ import '@testing-library/jest-dom/extend-expect';
 
 test('Should add div element to DOM.', () => {
   document.body.innerHTML = `
-    <div id="swquiz-app">
+    <div id="swquiz-game-header">
     </div>
     `;
   const text = 'Test question';
@@ -16,7 +16,7 @@ test('Should add div element to DOM.', () => {
 
 test('Should add question to div with ID question', () => {
   document.body.innerHTML = `
-    <div id="swquiz-app">
+    <div id="swquiz-game-header">
     </div>
     `;
   const text = 'Test question';
