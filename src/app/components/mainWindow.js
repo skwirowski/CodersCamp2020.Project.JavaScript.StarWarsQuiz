@@ -23,11 +23,15 @@ function fillMainWindowHTML() {
     'swquiz-game-footer-right',
     'swquiz-game-footer-right',
   );
+  let quizGameFooter = createDiv(
+    'swquiz-game-footer'
+  )
 
   quizGame.appendChild(quizGameHeader);
   quizGame.appendChild(quizGameBody);
   quizGame.appendChild(quizGameFooterLeft);
   quizGame.appendChild(quizGameFooterRight);
+  quizGame.appendChild(quizGameFooter);
 
   quizBody.appendChild(quizGame);
 }

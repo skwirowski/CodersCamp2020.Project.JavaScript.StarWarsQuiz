@@ -15,7 +15,14 @@ const quiz = (maxTime = 120000) =>{
     startButton.addEventListener("click", function(){
         activeTarget = getGameMode()
         activeTarget === "Spaceships" ? activeTarget = "starships" : ""
-        console.log(activeTarget)
+        const rulesBox = document.querySelector('.game-rules-box')
+        const whiteButton = document.querySelector('#white-button')
+        const defaultPhoto = document.querySelector('.swquiz-app__image')
+        rulesBox.style.display = "none"
+        startButton.style.display = "none"
+        whiteButton.style.display = "none"
+        defaultPhoto.style.display = "none"
+
         startTime(maxTime);
         generateQuestion(activeTarget.toLocaleLowerCase()).then(res=> {
             imageRecognizer(res.image)

@@ -6,7 +6,7 @@ export const timeLeftText = (maxTime) => {
     timeText.setAttribute('data-testid', 'timer-text');
     timeText.textContent = CONSTANT_TEXT + convertTime(maxTime);
     try {
-        document.querySelector('#swquiz-app .swquiz-row').appendChild(timeText);
+        document.querySelector('.swquiz-game-footer').appendChild(timeText);
     } catch (err)  {
         throw new Error('Can not attach time left text')
     }
