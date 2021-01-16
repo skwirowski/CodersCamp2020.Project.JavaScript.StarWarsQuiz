@@ -1,7 +1,7 @@
 import { updateTimeText, timeLeftText } from '../components/timeLeftText'
 import { lightSaber, updateSaber } from '../components/lightSaber'
 import { modalGameOver } from '../components/modalGameOver'
-import { playerAnswers } from '../components/mainWindow'
+import { playerAnswers, computerAnswers } from '../components/mainWindow'
 
 const modalSubmitCallback = (e) => {
     e.preventDefault();
@@ -88,7 +88,7 @@ export const startTime = (maxTime) => {
             modalGameOver(
                 document.querySelector('#swquiz-app'),
                 playerAnswers,
-                playerAnswers,
+                computerAnswers,
                 modalSubmitCallback,
             );
 

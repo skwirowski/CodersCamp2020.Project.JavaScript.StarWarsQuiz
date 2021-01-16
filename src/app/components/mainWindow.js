@@ -9,6 +9,7 @@ import { quiz } from '../logic/quiz'
 import { getImage } from '../logic/generatingQuestions/gettingImage'
 
 export const playerAnswers = [];
+export const computerAnswers = [];
 function fillMainWindowHTML() {
   let quizBody = document.getElementById('swquiz-body');
 
