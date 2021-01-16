@@ -3,9 +3,12 @@ import { playerAnswers, computerAnswers } from './mainWindow'
 import { isAnswerCorrect } from '../components/isAnswerCorrect'
 import { imageRecognizer } from '../imageRecognizer';
 import { playerComputer } from '../logic/playerComputer'
+// import { PlayerHuman} from '../logic/playerHuman'
 
 let nextQuestion = {};
-let computerPlayer = new playerComputer
+let computerPlayer = new playerComputer();
+// let player = new PlayerHuman();
+
 export const answersOnQuestion = (answerObject, target) => {    
     const app = document.querySelector('#swquiz-game-body');
     const container = document.createElement('div');
@@ -37,7 +40,9 @@ export const answersOnQuestion = (answerObject, target) => {
             chosenAnswer = e.target.value;
             let returnImage = answerObject.image || nextQuestion.image
             let computerAnswer
-            playerAnswers.push({answer: chosenAnswer, correct: answerObject.rightAnswer, isCorrect: isAnswerCorrect(chosenAnswer, answerObject.rightAnswer), img:`data:image/png;base64,${returnImage}`})
+            playerAnswers.push({answer: chosenAnswer, correct: answerObject.rightAnswer, isCorrect: isAnswerCorrect(chosenAnswer, answerObject.rightAnswer), img:`data:image/png;base64,${returnImage}`});
+            // player.addAnswer({answer: chosenAnswer, correct: answerObject.rightAnswer, isCorrect: isAnswerCorrect(chosenAnswer, answerObject.rightAnswer), img:`data:image/png;base64,${returnImage}`})
+            // console.log(player.getAnswer())
             computerAnswer = computerPlayer.chooseRandom(answerObject.answers)
             computerAnswers.push({answer: computerAnswer, correct: answerObject.rightAnswer, isCorrect: isAnswerCorrect(computerAnswer, answerObject.rightAnswer), img:`data:image/png;base64,${returnImage}`})
             if (answerObject.rightAnswer === chosenAnswer) {

@@ -4,7 +4,11 @@ import { screen } from '@testing-library/dom';
 test('screen shows main window with rules', () => {
   document.body.innerHTML = `
     <div class="swquiz-row" id="swquiz-header"></div>
-    <div class="swquiz-row" id="swquiz-body"></div>`;
+    <div class="swquiz-row" id="swquiz-body">
+      <div id="swquiz-game-body">
+        <img data-testid="imgRecognizer" src=".."/>
+      </div>
+    </div>`;
 
   mainWindow();
   // Test against menu
@@ -20,7 +24,6 @@ test('screen shows main window with rules', () => {
 
   // Game rules
   expect(document.getElementById('swquiz-game-body')).toBeTruthy();
-  expect(document.getElementById('game-rules-box')).toBeTruthy();
 
   // Game white button
   expect(document.getElementById('swquiz-game-footer-left')).toBeTruthy();

@@ -3,7 +3,7 @@ import { screen } from '@testing-library/dom';
 
 
 test('Light saber component is correctly created', () => {
-    document.body.innerHTML = `<div id="swquiz-app"><div class="swquiz-body"></div></div>`;
+    document.body.innerHTML = `<div id="swquiz-app"><div class="swquiz-game-footer"></div></div>`;
     lightSaber(120000);
     expect(screen.getByTestId('light-saber-container').className).toBe('light-saber-container');
 });
