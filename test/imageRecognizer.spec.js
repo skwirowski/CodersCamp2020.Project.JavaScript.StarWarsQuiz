@@ -4,7 +4,7 @@ import '@testing-library/jest-dom/extend-expect';
 
 test('Should add div element to DOM, should have class sqwuiz-app__image', () => {
   document.body.innerHTML = `
-    <div id="swquiz-app">
+    <div id="swquiz-body">
     </div>
     `;
   imageRecognizer('c3RhdGljL2Fzc2V0cy9pbWcvbW9kZXMvcGVvcGxlLzM2LmpwZw==');
@@ -13,9 +13,9 @@ test('Should add div element to DOM, should have class sqwuiz-app__image', () =>
   expect(screen.getByTestId('imgRecognizer')).toBeInstanceOf(HTMLElement);
 });
 
-test('should be empty div and have background-style', () => {
+test('should be empty img element', () => {
   document.body.innerHTML = `
-    <div id="swquiz-app">
+    <div id="swquiz-body">
     </div>
     `;
   imageRecognizer('c3RhdGljL2Fzc2V0cy9pbWcvbW9kZXMvcGVvcGxlLzM2LmpwZw==');
@@ -23,7 +23,5 @@ test('should be empty div and have background-style', () => {
     'c3RhdGljL2Fzc2V0cy9pbWcvbW9kZXMvcGVvcGxlLzM2LmpwZw==',
   );
   expect(screen.getByTestId('imgRecognizer')).toBeEmptyDOMElement();
-  expect(screen.getByTestId('imgRecognizer')).toHaveStyle(
-    `background-image: url('${imageBas64}');`,
-  );
+  expect(screen.getByTestId('imgRecognizer').tagName).toBe('IMG');
 });

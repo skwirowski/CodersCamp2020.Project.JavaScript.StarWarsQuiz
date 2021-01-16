@@ -1,4 +1,8 @@
-import { createIconHeader } from "./iconHeader"
+import { createIconHeader } from './iconHeader';
+import createDiv from '../utils/createDiv';
+import { getScores } from '../logic/localStorageScore';
+import { attachRulesButtonCallback } from './gameRules';
+import { getGameMode } from '../modes';
 
 function createEntry(place, scoreEntry) {
   let nickname = '-',
@@ -44,8 +48,9 @@ function createRankingHeader() {
 }
 
 function ranking(scoreList) {
-  let parent = document.querySelector('.ranking-box');
-  parent.classList.add('box');
+  let parent = document.getElementById('swquiz-game-body');
+
+  let ranking = createDiv('box', 'ranking-box');
 
   let placeholders = [];
   const places = ['1st', '2nd', '3rd'];
@@ -54,9 +59,43 @@ function ranking(scoreList) {
     placeholders.push(createEntry(place, scoreList[index]));
   });
 
-  parent.appendChild(createIconHeader("Ranking", "ranking-icon", "./static/assets/icons/contacts_24px.svg", "Ranking icon"));
-  parent.appendChild(createRankingHeader());
-  placeholders.forEach((item) => parent.appendChild(item));
+  ranking.appendChild(
+    createIconHeader(
+      'Mode Ranking',
+      'ranking-icon',
+      './static/assets/ui/contacts_24px.svg',
+      'Ranking ico',
+    ),
+  );
+  ranking.appendChild(createRankingHeader());
+  placeholders.forEach((item) => ranking.appendChild(item));
+
+  parent.appendChild(ranking);
 }
 
-export { ranking };
+function renderRanking(mode) {
+  attachRulesButtonCallback();
+
+  // Remove children of swquiz-game-body
+  let gameBodyElement = document.getElementById('swquiz-game-body');
+  gameBodyElement.innerHTML = '';
+
+  // Render ranking for selected mode
+  ranking(getScores(mode));
+}
+
+function attachRankingButtonCallback() {
+  let whiteButton = document.getElementById('white-button');
+  if (whiteButton) {
+    whiteButton.textContent = 'Hall of fame';
+    whiteButton.addEventListener(
+      'click',
+      function () {
+        renderRanking(getGameMode());
+      },
+      { once: true },
+    );
+  }
+}
+
+export { renderRanking, attachRankingButtonCallback };

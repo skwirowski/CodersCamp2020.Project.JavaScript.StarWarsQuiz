@@ -1,23 +1,67 @@
-
-import { isAnswerCorrect } from './components/isAnswerCorrect'
-import { gameMode } from './gameMode'
-import { redButton } from './redButton'
-import { imageRecognizer } from './imageRecognizer'
-import { mainMenu } from './components/mainMenu'
-import { answersOnQuestion } from './components/answersOnQuestion'
-import { generateQuestion } from './logic/generatingQuestions/generateQuestion'
+import { doc } from 'prettier';
+import { startTime } from './logic/timer';
+import { generateQuestion } from './logic/generatingQuestions/generateQuestion';
 import { modalGameOver } from './components/modalGameOver';
-import { quiz } from './logic/quiz'
-import { PlayerHuman } from './logic/playerHuman'
+import { mainWindow } from './components/mainWindow';
 
+const testDataHuman = {
+  q1: {
+    answer: 'Test',
+    correct: 'Test',
+    isCorrect: true,
+    img: '../../static/assets/img/modes/people/1.jpg',
+  },
+  q2: {
+    answer: 'Test',
+    correct: 'Test',
+    isCorrect: true,
+    img: '../../static/assets/img/modes/people/10.jpg',
+  },
+  q3: {
+    answer: 'Test',
+    correct: 'Test',
+    isCorrect: true,
+    img: '../../static/assets/img/modes/people/10.jpg',
+  },
+  q4: {
+    answer: 'Test',
+    correct: 'Test',
+    isCorrect: true,
+    img: '../../static/assets/img/modes/people/10.jpg',
+  },
+  correct: 1,
+  total: 2,
+};
 
-export const playerAnswers = [];
-export const player1 = new PlayerHuman
-let target;
-const getData = (element) => {
-  target = element.innerText;
-  return element;
-}
+const testDataComputer = {
+  q1: {
+    answer: 'Test2',
+    correct: 'Test',
+    isCorrect: false,
+    img: '../../static/assets/img/modes/people/1.jpg',
+  },
+  q2: {
+    answer: 'Test2',
+    correct: 'Test',
+    isCorrect: false,
+    img: '../../static/assets/img/modes/people/10.jpg',
+  },
+  q3: {
+    answer: 'Test',
+    correct: 'Test',
+    isCorrect: true,
+    img: '../../static/assets/img/modes/people/10.jpg',
+  },
+  q4: {
+    answer: 'Test',
+    correct: 'Test',
+    isCorrect: true,
+    img: '../../static/assets/img/modes/people/10.jpg',
+  },
+  correct: 0,
+  total: 2,
+};
+
 
 const modalSubmitCallback = (e) => {
   e.preventDefault();
@@ -26,21 +70,14 @@ const modalSubmitCallback = (e) => {
 };
 
 export const App = ({ options }) => {
-  gameMode('Who is this Character?');
-  redButton('play the game');
-  imageRecognizer('c3RhdGljL2Fzc2V0cy9pbWcvbW9kZXMvcGVvcGxlLzM2LmpwZw==');
+  mainWindow(options.quizMaxTime);
 
-  mainMenu(document.querySelector('.swquiz-header'), getData);
- /*const startButton = document.querySelector('#red-button');
- startButton.addEventListener("click", function(){ */
-   quiz(options.quizMaxTime, target)
- //}) 
- /* modalGameOver(
-    document.querySelector('#swquiz-app'),
-    testDataHuman,
-    testDataComputer,
-    modalSubmitCallback,
-  ); */
-  //quiz(options.quizMaxTime)
-  //generateQuestion('starships').then(res=> console.log(res))
+  // modalGameOver(
+  //   document.querySelector('#swquiz-app'),
+  //   testDataHuman,
+  //   testDataComputer,
+  //   modalSubmitCallback,
+  // );
+  // startTime(options.quizMaxTime)
+  // generateQuestion('people').then(res=> console.log(res))
 };

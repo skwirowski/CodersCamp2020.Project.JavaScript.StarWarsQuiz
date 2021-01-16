@@ -1,4 +1,9 @@
-import { VEHICLE_MODE, PEOPLE_MODE, SPACESHIPS_MODE } from '../modes';
+import {
+  VEHICLE_MODE,
+  PEOPLE_MODE,
+  SPACESHIPS_MODE,
+  setGameMode,
+} from '../modes';
 
 const createButton = (className, textContent, callback) => {
   const btn = document.createElement('button');
@@ -31,6 +36,7 @@ const mainMenu = (parent, callback) => {
 
   const btnPeople = createButton('swquiz-menu-button', PEOPLE_MODE, callback);
   btnPeople.classList.add('active');
+  setGameMode(PEOPLE_MODE);
   menuContainer.appendChild(btnPeople);
   menuContainer.appendChild(
     createButton('swquiz-menu-button', VEHICLE_MODE, callback),
@@ -41,4 +47,5 @@ const mainMenu = (parent, callback) => {
 
   parent.appendChild(menuContainer);
 };
+
 export { mainMenu };
