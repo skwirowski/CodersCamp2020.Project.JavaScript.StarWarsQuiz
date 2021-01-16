@@ -43,7 +43,7 @@ function mainWindow(maxTime) {
   renderRules(getGameMode());
 
   imageRecognizer('c3RhdGljL2Fzc2V0cy9pbWcvbW9kZXMvcGVvcGxlLzM2LmpwZw==');
-  quiz(6000, getGameMode())
+  quiz(6000)
 }
 
 export { mainWindow };
