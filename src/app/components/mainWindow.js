@@ -5,7 +5,9 @@ import { getGameMode, setGameMode } from '../modes';
 import { mainMenu } from '../components/mainMenu';
 import { imageRecognizer } from '../imageRecognizer';
 import { renderRules } from './gameRules';
+import { quiz } from '../logic/quiz'
 
+export const playerAnswers = [];
 function fillMainWindowHTML() {
   let quizBody = document.getElementById('swquiz-body');
 
@@ -29,7 +31,7 @@ function fillMainWindowHTML() {
   quizBody.appendChild(quizGame);
 }
 
-function mainWindow() {
+function mainWindow(maxTime) {
   fillMainWindowHTML();
 
   mainMenu(document.getElementById('swquiz-header'), setGameMode);
@@ -41,7 +43,7 @@ function mainWindow() {
   renderRules(getGameMode());
 
   imageRecognizer('c3RhdGljL2Fzc2V0cy9pbWcvbW9kZXMvcGVvcGxlLzM2LmpwZw==');
-
+  quiz(maxTime, getGameMode())
 }
 
 export { mainWindow };

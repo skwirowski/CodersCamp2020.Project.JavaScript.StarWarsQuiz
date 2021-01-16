@@ -1,6 +1,6 @@
 import { generateQuestion } from '../logic/generatingQuestions/generateQuestion'
 import { PlayerHuman } from '../logic/playerHuman'
-import { playerAnswers, player1 } from '../App'
+import { playerAnswers } from './mainWindow'
 import { isAnswerCorrect } from '../components/isAnswerCorrect'
 
 export const answersOnQuestion = (answers, correctAnswer, checkingAnswer, target) => {

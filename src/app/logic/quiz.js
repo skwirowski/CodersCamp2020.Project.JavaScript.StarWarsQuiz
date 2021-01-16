@@ -4,7 +4,7 @@ import { generateQuestion } from './generatingQuestions/generateQuestion'
 import { answersOnQuestion } from '../components/answersOnQuestion'
 import { PlayerHuman } from '../logic/playerHuman'
 import { isAnswerCorrect } from '../components/isAnswerCorrect'
-import { playerAnswers, player1 } from '../App'
+import { playerAnswers } from '../components/mainWindow'
 import { modalGameOver } from '../components/modalGameOver'
 
 const testDataHuman = {
@@ -76,9 +76,9 @@ const quiz = (maxTime = 120000, target = "people") =>{
     const startButton = document.querySelector('#red-button');
     var activeTarget = target === "Spaceships" ?  "starships" : target; 
     startButton.addEventListener("click", function(){
-        startTime(maxTime)
+        startTime(maxTime) 
         const timer = setInterval(()=>{
-            maxTime = maxTime - 10000;
+            maxTime = maxTime - 1000;
             if(maxTime <= 0) {
                 clearInterval(timer)
                // player1.getAnswer() // tutaj nie ;d
