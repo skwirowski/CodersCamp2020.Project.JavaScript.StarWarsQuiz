@@ -6,11 +6,13 @@ const createHeader = (parent, textContent) => {
 };
 
 const createSummaryP = (parent, playerAnswers, computerAnswers) => {
+  const correctPlayersAnswersCount = playerAnswers.filter(answer=>answer.isCorrect).length;
+  const correctComputerAnswersCount = computerAnswers.filter(answer=>answer.isCorrect).length;
   const p = document.createElement('p');
   p.className = `${parent.className}--paragraph`;
   p.textContent = `The force is strong in you young Padawan! 
-    During 1 minute you have answered ${playerAnswers.correct} / ${playerAnswers.total} questions. 
-    And Google quessed ${computerAnswers.correct} / ${computerAnswers.total}.`;
+    During 1 minute you have answered ${correctPlayersAnswersCount} / ${playerAnswers.length} questions. 
+    And Google quessed ${correctComputerAnswersCount} / ${computerAnswers.length}.`;
   parent.appendChild(p);
 };
 

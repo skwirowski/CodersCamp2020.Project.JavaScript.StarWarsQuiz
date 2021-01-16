@@ -34,10 +34,12 @@ export const answersOnQuestion = (answerObject, target) => {
     });
     app.appendChild(container);
 
-    const chosenButton = document.getElementById('answers-container').querySelectorAll('.button--lighter');
-    chosenButton.forEach(button=>{
-        button.addEventListener('click', function(){
-            chosenAnswer = button.value;
+
+    const buttonsContainer = document.getElementById('answers-container');
+
+    buttonsContainer.addEventListener('click', (e)=>{
+        if(e.target.id === 'answers-container') return;
+            chosenAnswer = e.target.value;
             let returnImage = answerObject.image || nextQuestion.image
             playerAnswers.push({answer: chosenAnswer, correct: answerObject.rightAnswer, isCorrect: isAnswerCorrect(chosenAnswer, answerObject.rightAnswer), img:`data:image/png;base64,${returnImage}`})
            // computerAnswers.push(computerPlayer.chooseRandom(answerObject.answers))
@@ -45,10 +47,10 @@ export const answersOnQuestion = (answerObject, target) => {
             computerAnswer = computerPlayer.chooseRandom(answerObject.answers)
             computerAnswers.push({answer: computerAnswer, correct: answerObject.rightAnswer, isCorrect: isAnswerCorrect(computerAnswer, answerObject.rightAnswer), img:`data:image/png;base64,${returnImage}`})
             if (answerObject.rightAnswer === chosenAnswer) {
-                button.classList.add('button--correct');
+                e.target.classList.add('button--correct');
             } 
             else {
-                button.classList.add('button--wrong');
+                e.target.classList.add('button--wrong');
             }
             window.setTimeout(function(){
                 container.remove();
@@ -60,32 +62,42 @@ export const answersOnQuestion = (answerObject, target) => {
             generateQuestion(target).then(res=> {
                 nextQuestion = res;
             })
-            button.removeEventListener('click')
-        })
-    })
-    
-
-   /* for (let i = 0; i < chosenButton.length; i++) {
-        chosenButton[i].onclick = checkingAnswer = () => {
-            chosenAnswer = chosenButton[i].value;
-
-            if (correctAnswer === chosenAnswer) {
-                chosenButton[i].classList.add('button--correct');
-                window.setTimeout(function(){
-                    container.remove()
-                 }, 1900);
-            } else {
-                chosenButton[i].classList.add('button--wrong');
-                window.setTimeout(function(){
-                       container.remove()
-                   }, 1900);
-            }
-            window.setTimeout(function(){
-                generateQuestion(target).then(res=> {
-                    answersOnQuestion(res.answers, res.rightAnswer, '', target)
-                })
-            }, 1900)
-        }
-    } */
-    
+    }, {
+        once: true
+      })
 }
+
+
+
+
+
+    // const chosenButton = document.getElementById('answers-container').querySelectorAll('.button--lighter');
+    // chosenButton.forEach(button=>{
+    //     button.addEventListener('click', function(){
+    //         chosenAnswer = button.value;
+    //         let returnImage = answerObject.image || nextQuestion.image
+    //         playerAnswers.push({answer: chosenAnswer, correct: answerObject.rightAnswer, isCorrect: isAnswerCorrect(chosenAnswer, answerObject.rightAnswer), img:`data:image/png;base64,${returnImage}`})
+    //        // computerAnswers.push(computerPlayer.chooseRandom(answerObject.answers))
+    //         let computerAnswer;
+    //         computerAnswer = computerPlayer.chooseRandom(answerObject.answers)
+    //         computerAnswers.push({answer: computerAnswer, correct: answerObject.rightAnswer, isCorrect: isAnswerCorrect(computerAnswer, answerObject.rightAnswer), img:`data:image/png;base64,${returnImage}`})
+    //         if (answerObject.rightAnswer === chosenAnswer) {
+    //             button.classList.add('button--correct');
+    //         } 
+    //         else {
+    //             button.classList.add('button--wrong');
+    //         }
+    //         window.setTimeout(function(){
+    //             container.remove();
+    //             answersOnQuestion(nextQuestion, target)
+    //             imageRecognizer(nextQuestion.image)
+    //          console.log(nextQuestion.image)
+    //         }, 1000);
+
+    //         generateQuestion(target).then(res=> {
+    //             nextQuestion = res;
+    //         })
+    //         button.removeEventListener('click')
+    //     })
+    // })
+    
