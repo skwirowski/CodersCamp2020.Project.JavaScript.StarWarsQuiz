@@ -1,3 +1,8 @@
+import { saveScore } from '../logic/localStorageScore'
+import { PEOPLE_MODE } from '../modes';
+import { answersOnQuestion } from './answersOnQuestion';
+import { getGameMode } from '../modes'
+
 const createHeader = (parent, textContent) => {
   const h1 = document.createElement('h1');
   h1.textContent = textContent;
@@ -6,11 +11,13 @@ const createHeader = (parent, textContent) => {
 };
 
 const createSummaryP = (parent, playerAnswers, computerAnswers) => {
+  const correctPlayersAnswersCount = playerAnswers.filter(answer=>answer.isCorrect).length;
+  const correctComputerAnswersCount = computerAnswers.filter(answer=>answer.isCorrect).length;
   const p = document.createElement('p');
   p.className = `${parent.className}--paragraph`;
   p.textContent = `The force is strong in you young Padawan! 
-    During 1 minute you have answered ${playerAnswers.correct} / ${playerAnswers.total} questions. 
-    And Google quessed ${computerAnswers.correct} / ${computerAnswers.total}.`;
+    During 1 minute you have answered ${correctPlayersAnswersCount} / ${playerAnswers.length} questions. 
+    And Google quessed ${correctComputerAnswersCount} / ${computerAnswers.length}.`;
   parent.appendChild(p);
 };
 
@@ -123,20 +130,26 @@ const createLabel = (parent, target) => {
   return label;
 };
 
-const createButton = (parent) => {
+const createButton = (parent, answers) => {
   const btn = document.createElement('button');
   btn.className = `${parent.className}--button`;
   btn.setAttribute('type', 'submit');
   btn.textContent = 'MAY THE FORCE BE WITH YOU!';
+  btn.addEventListener('click', function(){
+    const correctPlayersAnswersCount = answers.filter(answer=>answer.isCorrect).length;
+    let activeTarget = getGameMode()
+    const inputName = document.querySelector('#name')
+    saveScore(activeTarget, inputName.value, correctPlayersAnswersCount, answers.length)
+  })
   return btn;
 };
 
-const mergeAndDisplayBottomSection = (parent, callback) => {
+const mergeAndDisplayBottomSection = (parent, callback, answers) => {
   const container = createContainer(parent, 'bottomContainer');
   const form = createForm(parent, callback);
   const input = createInput(parent);
   const label = createLabel(parent, input.id);
-  const submitButton = createButton(parent);
+  const submitButton = createButton(parent, answers);
 
   container.appendChild(form);
   form.appendChild(input);
@@ -167,7 +180,7 @@ const modalGameOver = (parent, playerAnswers, computerAnswers, callback) => {
   createHeader(modal, 'Game Over');
   createSummaryP(modal, playerAnswers, computerAnswers);
   mergeAndDisplayMiddleSection(modal, playerAnswers, computerAnswers);
-  mergeAndDisplayBottomSection(modal, callback);
+  mergeAndDisplayBottomSection(modal, callback, playerAnswers);
 };
 
 export { modalGameOver };

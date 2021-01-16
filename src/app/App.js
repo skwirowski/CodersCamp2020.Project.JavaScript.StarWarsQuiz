@@ -62,6 +62,7 @@ const testDataComputer = {
   total: 2,
 };
 
+
 const modalSubmitCallback = (e) => {
   e.preventDefault();
   console.log('MAY THE FORCE BE WITH YOU!');
@@ -69,7 +70,7 @@ const modalSubmitCallback = (e) => {
 };
 
 export const App = ({ options }) => {
-  mainWindow();
+  mainWindow(options.quizMaxTime);
 
   // modalGameOver(
   //   document.querySelector('#swquiz-app'),

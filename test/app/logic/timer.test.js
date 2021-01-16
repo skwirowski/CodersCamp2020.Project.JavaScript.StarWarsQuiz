@@ -8,7 +8,7 @@ test('Stop timer when element does not exist', () => {
 })
 
 test('Correct timer working integral test', () => {
-    document.body.innerHTML = `<div id="swquiz-app"><div class="swquiz-body"></div></div>`;
+    document.body.innerHTML = `<div id="swquiz-app"><div class="swquiz-game-footer"></div></div>`;
     jest.useFakeTimers();
     startTime(120000);
     expect(screen.getByTestId('timer-text')).not.toBeUndefined();
@@ -25,7 +25,7 @@ test('Correct timer working integral test', () => {
 })
 
 test('time is stopping correctly', () => {
-    document.body.innerHTML = `<div id="swquiz-app"><div class="swquiz-body"></div></div>`;
+    document.body.innerHTML = `<div id="swquiz-app"><div class="swquiz-game-footer"></div></div>`;
     jest.useFakeTimers();
     startTime(120000);
     jest.advanceTimersByTime(200000);

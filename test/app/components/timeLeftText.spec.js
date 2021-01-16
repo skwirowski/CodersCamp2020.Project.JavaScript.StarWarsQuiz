@@ -7,7 +7,7 @@ test('updating time trow error when Time left component does not exist', () => {
 })
 
 test('TextLeft component is correctly created', () => {
-    document.body.innerHTML = `<div id="swquiz-app"><div class="swquiz-body"></div></div>`;
+    document.body.innerHTML = `<div id="swquiz-app"><div class="swquiz-game-footer"></div></div>`;
     timeLeftText(120000);
     expect(screen.getByTestId('timer-text').className).toBe('timer-text');
     expect(screen.getByTestId('timer-text').textContent).toBe('Time Left: 2m 00s');

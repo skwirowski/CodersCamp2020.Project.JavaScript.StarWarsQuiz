@@ -5,7 +5,11 @@ import { getGameMode, setGameMode } from '../modes';
 import { mainMenu } from '../components/mainMenu';
 import { imageRecognizer } from '../imageRecognizer';
 import { renderRules } from './gameRules';
+import { quiz } from '../logic/quiz'
+import { getImage } from '../logic/generatingQuestions/gettingImage'
 
+export const playerAnswers = [];
+export const computerAnswers = [];
 function fillMainWindowHTML() {
   let quizBody = document.getElementById('swquiz-body');
 
@@ -20,16 +24,20 @@ function fillMainWindowHTML() {
     'swquiz-game-footer-right',
     'swquiz-game-footer-right',
   );
+  let quizGameFooter = createDiv(
+    'swquiz-game-footer'
+  )
 
   quizGame.appendChild(quizGameHeader);
   quizGame.appendChild(quizGameBody);
   quizGame.appendChild(quizGameFooterLeft);
   quizGame.appendChild(quizGameFooterRight);
+  quizGame.appendChild(quizGameFooter);
 
   quizBody.appendChild(quizGame);
 }
 
-function mainWindow() {
+async function mainWindow(maxTime) {
   fillMainWindowHTML();
 
   mainMenu(document.getElementById('swquiz-header'), setGameMode);
@@ -37,11 +45,11 @@ function mainWindow() {
   redButton('play the game');
   whiteButton('Hall of fame');
   gameMode('Who is this Character?');
-
+  const default64Image = await getImage('people', 36)
+  imageRecognizer(default64Image)
   renderRules(getGameMode());
-
-  imageRecognizer('c3RhdGljL2Fzc2V0cy9pbWcvbW9kZXMvcGVvcGxlLzM2LmpwZw==');
-
+  
+  quiz(10000) // pass maxTime - this is only for testing
 }
 
 export { mainWindow };

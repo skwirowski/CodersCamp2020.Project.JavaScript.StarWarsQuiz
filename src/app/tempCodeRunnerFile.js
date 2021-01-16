@@ -1,0 +1,2 @@
+//console.log(element.innerText) // jak nie próbuje przypisywać wyniku tej funkcji do żadnej zmiennej to elegancko w konsoli się wyświetli jaki element jest teraz wybrany
+  quiz(options.quizMaxTime, element)
