@@ -9,9 +9,6 @@ export const generateQuestion = async (mode) => {
         const rightAnswerIndex = Math.floor(Math.random() * randomIds.length);
         const answers = await getAnswers(mode, randomIds);
         const base64Image = await getImage(mode, randomIds[rightAnswerIndex]);
-        console.log({image: base64Image,
-            answers,
-            rightAnswer: answers[rightAnswerIndex]})
         return {
             image: base64Image,
             answers,

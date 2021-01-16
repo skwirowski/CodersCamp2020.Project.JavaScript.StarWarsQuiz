@@ -49,7 +49,7 @@ async function mainWindow(maxTime) {
   imageRecognizer(default64Image)
   renderRules(getGameMode());
   
-  quiz(6000)
+  quiz(10000) // pass maxTime - this is only for testing
 }
 
 export { mainWindow };

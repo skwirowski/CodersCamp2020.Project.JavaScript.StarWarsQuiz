@@ -138,9 +138,7 @@ const createButton = (parent, answers) => {
   btn.addEventListener('click', function(){
     const correctPlayersAnswersCount = answers.filter(answer=>answer.isCorrect).length;
     let activeTarget = getGameMode()
-    console.log(activeTarget)
     const inputName = document.querySelector('#name')
-    console.log(inputName.value)
     saveScore(activeTarget, inputName.value, correctPlayersAnswersCount, answers.length)
   })
   return btn;
