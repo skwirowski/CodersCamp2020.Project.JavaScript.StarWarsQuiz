@@ -3,6 +3,9 @@ import { PlayerHuman } from '../logic/playerHuman'
 import { playerAnswers } from './mainWindow'
 import { isAnswerCorrect } from '../components/isAnswerCorrect'
 
+
+let nextQuestion = {};
+
 export const answersOnQuestion = (answers, correctAnswer, checkingAnswer, target) => {
     const app = document.querySelector('#swquiz-app');
    /* player.countAnswers = player.countAnswers++
@@ -33,24 +36,23 @@ export const answersOnQuestion = (answers, correctAnswer, checkingAnswer, target
         button.addEventListener('click', function(){
             chosenAnswer = button.value;
             playerAnswers.push({ans: chosenAnswer, truthy: isAnswerCorrect(chosenAnswer, correctAnswer)})
-          //  player1.addAnswer({ans: chosenAnswer, truthy: isAnswerCorrect(chosenAnswer, correctAnswer)})
-           // console.log(player1.getAnswer())
+
+
             if (correctAnswer === chosenAnswer) {
                 button.classList.add('button--correct');
-                window.setTimeout(function(){
-                    container.remove()
-                 }, 1000);
-            } else {
+            } 
+            else {
                 button.classList.add('button--wrong');
-                window.setTimeout(function(){
-                       container.remove()
-                   }, 1000);
             }
+            
             window.setTimeout(function(){
-                generateQuestion(target).then(res=> {
-                    answersOnQuestion(res.answers, res.rightAnswer, '', target)
-                })
-            }, 1000)
+                container.remove();
+                answersOnQuestion(nextQuestion.answers, nextQuestion.rightAnswer, '', target)
+            }, 1000);
+
+            generateQuestion(target).then(res=> {
+                nextQuestion = res;
+            })
         })
     })
     
