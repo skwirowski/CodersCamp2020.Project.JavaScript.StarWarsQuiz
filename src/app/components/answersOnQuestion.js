@@ -7,7 +7,8 @@ import { imageRecognizer } from '../imageRecognizer';
 
 let nextQuestion = {};
 
-export const answersOnQuestion = (answers, correctAnswer, checkingAnswer, target, firstImage) => {
+//export const answersOnQuestion = (answers, correctAnswer, checkingAnswer, target, firstImage) => {
+export const answersOnQuestion = (answerObject, target) => {    
     const app = document.querySelector('#swquiz-game-body');
    /* player.countAnswers = player.countAnswers++
     console.log("Przekazany obiekt " + player.countAnswers) */
@@ -23,7 +24,7 @@ export const answersOnQuestion = (answers, correctAnswer, checkingAnswer, target
       button.setAttribute('id', idString);
       button.setAttribute('data-testid', idString);
       button.setAttribute('class', 'button button--lighter');
-      button.setAttribute('value', `${answers[index]}`);
+      button.setAttribute('value', `${answerObject.answers[index]}`);
       return button;
     });
     
@@ -36,11 +37,11 @@ export const answersOnQuestion = (answers, correctAnswer, checkingAnswer, target
     chosenButton.forEach(button=>{
         button.addEventListener('click', function(){
             chosenAnswer = button.value;
-            let returnImage = firstImage || nextQuestion.image
-            playerAnswers.push({answer: chosenAnswer, correct: correctAnswer, isCorrect: isAnswerCorrect(chosenAnswer, correctAnswer), img:`data:image/png;base64,${returnImage}`})
+            let returnImage = answerObject.image || nextQuestion.image
+            playerAnswers.push({answer: chosenAnswer, correct: answerObject.rightAnswer, isCorrect: isAnswerCorrect(chosenAnswer, answerObject.rightAnswer), img:`data:image/png;base64,${returnImage}`})
 
 
-            if (correctAnswer === chosenAnswer) {
+            if (answerObject.rightAnswer === chosenAnswer) {
                 button.classList.add('button--correct');
             } 
             else {
@@ -48,7 +49,7 @@ export const answersOnQuestion = (answers, correctAnswer, checkingAnswer, target
             }
             window.setTimeout(function(){
                 container.remove();
-                answersOnQuestion(nextQuestion.answers, nextQuestion.rightAnswer, '', target)
+                answersOnQuestion(nextQuestion, target)
                 imageRecognizer(nextQuestion.image)
              console.log(nextQuestion.image)
             }, 1000);
