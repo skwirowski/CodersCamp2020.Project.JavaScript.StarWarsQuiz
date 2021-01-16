@@ -7,7 +7,7 @@ import { imageRecognizer } from '../imageRecognizer';
 
 let nextQuestion = {};
 
-export const answersOnQuestion = (answers, correctAnswer, checkingAnswer, target) => {
+export const answersOnQuestion = (answers, correctAnswer, checkingAnswer, target, firstImage) => {
     const app = document.querySelector('#swquiz-game-body');
    /* player.countAnswers = player.countAnswers++
     console.log("Przekazany obiekt " + player.countAnswers) */
@@ -36,7 +36,8 @@ export const answersOnQuestion = (answers, correctAnswer, checkingAnswer, target
     chosenButton.forEach(button=>{
         button.addEventListener('click', function(){
             chosenAnswer = button.value;
-            playerAnswers.push({answer: chosenAnswer, correct: correctAnswer, isCorrect: isAnswerCorrect(chosenAnswer, correctAnswer), img:imageRecognizer(nextQuestion.image)})
+            let returnImage = firstImage || nextQuestion.image
+            playerAnswers.push({answer: chosenAnswer, correct: correctAnswer, isCorrect: isAnswerCorrect(chosenAnswer, correctAnswer), img:`data:image/png;base64,${returnImage}`})
 
 
             if (correctAnswer === chosenAnswer) {

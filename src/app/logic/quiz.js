@@ -26,7 +26,7 @@ const quiz = (maxTime = 120000) =>{
         startTime(maxTime);
         generateQuestion(activeTarget.toLocaleLowerCase()).then(res=> {
             imageRecognizer(res.image)
-            answersOnQuestion(res.answers, res.rightAnswer, '', activeTarget.toLocaleLowerCase())
+            answersOnQuestion(res.answers, res.rightAnswer, '', activeTarget.toLocaleLowerCase(), res.image)
         })
     })
 
