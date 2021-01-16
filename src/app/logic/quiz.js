@@ -1,4 +1,4 @@
-import { gameMode } from '../components/gameMode'
+import { gameMode } from '../gameMode'
 import { startTime } from './timer'
 import { generateQuestion } from './generatingQuestions/generateQuestion' 
 import { answersOnQuestion } from '../components/answersOnQuestion'

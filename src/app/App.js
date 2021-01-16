@@ -1,6 +1,6 @@
 
 import { isAnswerCorrect } from './components/isAnswerCorrect'
-import { gameMode } from './components/gameMode'
+import { gameMode } from './gameMode'
 import { redButton } from './redButton'
 import { imageRecognizer } from './imageRecognizer'
 import { mainMenu } from './components/mainMenu'
