@@ -5,7 +5,6 @@ import { isAnswerCorrect } from '../components/isAnswerCorrect'
 import { imageRecognizer } from '../imageRecognizer';
 import { playerComputer } from '../logic/playerComputer'
 
-
 let nextQuestion = {};
 let computerPlayer = new playerComputer
 //export const answersOnQuestion = (answers, correctAnswer, checkingAnswer, target, firstImage) => {
