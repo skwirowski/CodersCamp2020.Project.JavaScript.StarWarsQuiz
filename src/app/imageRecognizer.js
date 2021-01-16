@@ -3,7 +3,9 @@ export const imageRecognizer = (img) => {
   const imageElement = document.createElement('img');
   //btoa('string') - encode a string
   //function decodes a string of data which has been encoded using Base64 encoding.
-  let image = atob(img);
+  //let image = atob(img);
+  //console.log
+  let image = "data:image/png;base64," + img;
   imageElement.classList.add(
     'swquiz-app__image',
     'swquiz-row-left',

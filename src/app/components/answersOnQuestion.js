@@ -2,6 +2,7 @@ import { generateQuestion } from '../logic/generatingQuestions/generateQuestion'
 import { PlayerHuman } from '../logic/playerHuman'
 import { playerAnswers } from './mainWindow'
 import { isAnswerCorrect } from '../components/isAnswerCorrect'
+import { imageRecognizer } from '../imageRecognizer';
 
 
 let nextQuestion = {};
@@ -48,6 +49,8 @@ export const answersOnQuestion = (answers, correctAnswer, checkingAnswer, target
             window.setTimeout(function(){
                 container.remove();
                 answersOnQuestion(nextQuestion.answers, nextQuestion.rightAnswer, '', target)
+                imageRecognizer(nextQuestion.image)
+             console.log(nextQuestion.image)
             }, 1000);
 
             generateQuestion(target).then(res=> {

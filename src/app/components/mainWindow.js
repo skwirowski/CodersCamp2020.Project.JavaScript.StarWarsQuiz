@@ -6,6 +6,7 @@ import { mainMenu } from '../components/mainMenu';
 import { imageRecognizer } from '../imageRecognizer';
 import { renderRules } from './gameRules';
 import { quiz } from '../logic/quiz'
+import { getImage } from '../logic/generatingQuestions/gettingImage'
 
 export const playerAnswers = [];
 function fillMainWindowHTML() {
@@ -31,7 +32,7 @@ function fillMainWindowHTML() {
   quizBody.appendChild(quizGame);
 }
 
-function mainWindow(maxTime) {
+async function mainWindow(maxTime) {
   fillMainWindowHTML();
 
   mainMenu(document.getElementById('swquiz-header'), setGameMode);
@@ -39,10 +40,10 @@ function mainWindow(maxTime) {
   redButton('play the game');
   whiteButton('Hall of fame');
   gameMode('Who is this Character?');
-
+  const default64Image = await getImage('people', 36)
+  imageRecognizer(default64Image)
   renderRules(getGameMode());
-
-  imageRecognizer('c3RhdGljL2Fzc2V0cy9pbWcvbW9kZXMvcGVvcGxlLzM2LmpwZw==');
+  
   quiz(6000)
 }
 
