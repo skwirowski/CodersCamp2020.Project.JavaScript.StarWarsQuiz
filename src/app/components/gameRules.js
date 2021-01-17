@@ -3,6 +3,7 @@ import { createIconHeader } from './iconHeader';
 import { attachRankingButtonCallback } from './ranking';
 import { getGameMode } from '../modes';
 import { getRule } from '../ruleConstantStrings';
+import { whiteButton } from '../whiteButton';
 
 function gameRules(textToShow) {
   let parent = document.querySelector('.swquiz-game-body');
@@ -37,10 +38,14 @@ function renderRules(mode) {
 }
 
 function attachRulesButtonCallback() {
-  let whiteButton = document.getElementById('white-button');
-  if (whiteButton) {
-    whiteButton.textContent = 'Show rules';
-    whiteButton.addEventListener(
+  let footerLeft = document.getElementById('swquiz-game-footer-left');
+  if (footerLeft) {
+    footerLeft.innerHTML = '';
+
+    whiteButton('static/assets/icons/school_24px.svg', 'Show rules');
+    let whiteBtn = document.getElementById('white-button');
+
+    whiteBtn.addEventListener(
       'click',
       function () {
         renderRules(getGameMode());

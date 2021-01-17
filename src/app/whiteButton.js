@@ -1,5 +1,6 @@
 export const whiteButton = (icone , text) => {
-    const app = document.querySelector('#swquiz-app');
+    console.log(`${icone} ${text}`);
+    const app = document.getElementById('swquiz-game-footer-left');
     const button = document.createElement('button');
     const paragraph = document.createElement("p");
     let buttonText = document.createTextNode(`${text}`);
