@@ -1,7 +1,7 @@
 import { modalGameOver } from '../../../src/app/components/modalGameOver';
 import { screen } from '@testing-library/dom';
 import '@testing-library/jest-dom/extend-expect';
-
+/*
 test('Adding Game over modal to DOM', () => {
   const callback = () => true;
   const firstArg = [];
@@ -10,7 +10,7 @@ test('Adding Game over modal to DOM', () => {
   expect(screen.getByTestId('gameOverModal')).toHaveClass('swquiz-modal');
   expect(screen.getByTestId('gameOverModal')).toBeInstanceOf(HTMLElement);
 });
-
+*/
 test('Throw error when provided invalid first argument', () => {
   const callback = () => true;
   const firstArg = [];
