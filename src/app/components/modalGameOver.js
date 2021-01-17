@@ -139,7 +139,10 @@ const createButton = (parent, answers) => {
     const correctPlayersAnswersCount = answers.filter(answer=>answer.isCorrect).length;
     let activeTarget = getGameMode()
     const inputName = document.querySelector('#name')
-    saveScore(activeTarget, inputName.value, correctPlayersAnswersCount, answers.length);
+    saveScore(activeTarget, inputName.value, correctPlayersAnswersCount, answers.length)
+    const appContainer = document.querySelector('#swquiz-app');
+    appContainer.classList.remove('modal-overlay');
+    window.location.reload()
   })
   return btn;
 };
@@ -175,12 +178,16 @@ const modalGameOver = (parent, playerAnswers, computerAnswers, callback) => {
   const modal = document.createElement('section');
   modal.classList.add('swquiz-modal');
   modal.setAttribute('data-testid', 'gameOverModal');
-
+  if (modal) {
+    const appContainer = document.querySelector('#swquiz-app');
+    appContainer.classList.add('modal-overlay');
+  }
   parent.appendChild(modal);
   createHeader(modal, 'Game Over');
   createSummaryP(modal, playerAnswers, computerAnswers);
   mergeAndDisplayMiddleSection(modal, playerAnswers, computerAnswers);
   mergeAndDisplayBottomSection(modal, callback, playerAnswers);
+
 };
 
 export { modalGameOver };
