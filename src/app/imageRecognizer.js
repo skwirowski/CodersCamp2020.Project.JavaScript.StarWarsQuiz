@@ -1,5 +1,5 @@
 export const imageRecognizer = (img) => {
-  const app = document.getElementById('swquiz-body');
+  const app = document.querySelector('#swquiz-body');
   const imageElement = document.createElement('img');
   //btoa('string') - encode a string
   //function decodes a string of data which has been encoded using Base64 encoding.
