@@ -20,7 +20,7 @@ const quiz = (maxTime = 120000) =>{
         whiteButton.style.display = "none"
         defaultPhoto.style.display = "none"
         document.querySelector('.question').style.display = "none";
-
+        document.querySelector('.swquiz-game-footer').style.display = "none"
         document.querySelector('.lds-ring').style.display = "block";
         
         generateQuestion(activeTarget.toLocaleLowerCase()).then(res=> {
