@@ -1,17 +1,7 @@
-.button {
-    border-radius: 16px;
-    font-size: 42px;
-    font-weight: 500;
-    height: 100px;
-    line-height: 51.2px;
-    width: 600px;
-  }
-
 .button--white {
     background-color: var(--base-white);
     color: var(--base-black);
     border: none;
-    text-align: left;
     box-shadow: var(--box-shadow-simple);
 }
 
@@ -19,13 +9,6 @@
     text-transform: uppercase;
 }
 
-.button img {
-    padding-right: 2em;
-}
-
-
-.button p {
-    display: block;
-    margin: auto;
+.button > p {
     padding-left: 2em;
 }
