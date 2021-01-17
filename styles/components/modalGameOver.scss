@@ -41,17 +41,24 @@
   }
   &--detailedAnswers {
     max-height: 300px;
-    overflow-y: scroll;
   }
   &--table {
     width: 100%;
+    overflow-x: hidden;
     img {
       max-height: 100px;
       box-shadow: var(--box-shadow-property);
       border-radius: var(--border-radius);
     }
     tbody {
+      &::-webkit-scrollbar{
+        width:0;
+        display: none;
+      }
       width: 100%;
+      display: block;
+      max-height: 200px;
+      overflow-y: auto;      
     }
     tr {
       width: 100%;
@@ -120,4 +127,66 @@
   min-height: 100vh;
   z-index: 1000;
   background: rgba(0, 0, 0, 0.75);
+}
+
+@media screen and (max-width:1023px){
+  .swquiz-modal{
+    height: 90vh;
+    font-size:2.5vw;
+    justify-content: space-between;
+    &--middleContainer{
+      grid-template-columns: 1fr;
+      max-height: 40%;
+    }
+    &--table{
+      text-align: center;
+      img{
+        max-height: 50px;
+      }
+      tbody{
+        max-height: 20vh;
+      }
+    }
+    &--detailedAnswers{
+      text-align: center;
+      font-size: 0.8em;
+    }
+    &--photoContainer{
+      display: none;
+    }
+    &--form{
+      grid-template-columns: 1fr;
+        grid-template-areas: 
+        "label"
+        "input"
+        "button";
+        .swquiz-modal{
+          &--button{
+            font-size:0.6em;
+        }
+        }
+    }
+    &--label{
+      text-align: center;
+      font-size: 0.9em;
+    }
+    &--nameInput{
+      text-align: center;
+      width:70%;
+      justify-self: center;
+      height: 7vw;
+    }
+
+  }
+}
+
+@media screen and (max-width:720px){
+  .swquiz-modal{
+    font-size: 3.5vw;
+    &--table{
+      tbody{
+        max-height: 25vh;
+      }
+    }
+  }
 }
