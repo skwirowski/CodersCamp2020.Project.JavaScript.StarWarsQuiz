@@ -19,7 +19,7 @@ const quiz = (maxTime = 120000) =>{
         startButton.style.display = "none"
         whiteButton.style.display = "none"
         defaultPhoto.style.display = "none"
-
+        document.querySelector('.question').style.display = "none";
 
         document.querySelector('.lds-ring').style.display = "block";
         
@@ -27,6 +27,7 @@ const quiz = (maxTime = 120000) =>{
             imageRecognizer(res.image);
             answersOnQuestion(res, activeTarget.toLocaleLowerCase());
             startTime(maxTime);
+            document.querySelector('.question').style.display = "flex";
             document.querySelector('.lds-ring').style.display = "none";
         })
     })
