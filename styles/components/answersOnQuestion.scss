@@ -9,3 +9,10 @@
     justify-content: center;
     margin: 50px;
 }
+
+@media (min-width: 1px) and (max-width: 768px){
+    .container-answers{
+        width: 80%;
+    }
+}
+
