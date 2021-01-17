@@ -3,10 +3,20 @@
   -moz-box-shadow: var(--box-shadow-property);
   box-shadow: var(--box-shadow-property);
   border-radius: var(--border-radius);
+  align-self: flex-start;
+  width: 100%;
 }
 
 .swquiz-sw-image {
-  max-width: 100%;
+  max-width: 260px;
+  display: block;
+  margin: 0 auto;
   width: 100%;
   height: auto;
+}
+
+@media (max-width: 768px) {
+  .swquiz-app__image {
+    margin: 10px auto 20px;
+  }
 }

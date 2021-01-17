@@ -1,5 +1,7 @@
 .light-saber-container {
     position: relative;
+    width: 90%;
+    margin: 0 auto;
     img {
         width: 25%;
     }
@@ -7,7 +9,7 @@
         background-color: gray;
         position: absolute;
         width: 75%;
-        height: 60%;
+        height: 55%;
         left: 23%;
         top: 48%;
         transform: translateY(-50%);
