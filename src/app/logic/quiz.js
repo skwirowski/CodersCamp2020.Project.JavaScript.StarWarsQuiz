@@ -22,7 +22,9 @@ const quiz = (maxTime = 120000) =>{
         document.querySelector('.question').style.display = "none";
         document.querySelector('.swquiz-game-footer').style.display = "none"
         document.querySelector('.lds-ring').style.display = "block";
-        
+        document.querySelector('.swquiz-game-footer-left').style.display = "none"
+        document.querySelector('.swquiz-game-footer-right').style.display = "none"
+        document.querySelector('.swquiz-game').style.gridTemplateRows = "0.1fr 0.8fr"
         generateQuestion(activeTarget.toLocaleLowerCase()).then(res=> {
             startTime(maxTime);
             imageRecognizer(res.image);
