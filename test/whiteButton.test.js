@@ -3,7 +3,7 @@ import { screen } from '@testing-library/dom';
 import '@testing-library/jest-dom/extend-expect';
 
 test('button has class button button--white ', () => {
-  document.body.innerHTML = `<div id="swquiz-app"></div>`;
+  document.body.innerHTML = `<div id="swquiz-game-footer-left"></div>`;
   const testText = 'Hall of fame';
   const testIcon = 'static/assets/icons/contacts_24px.svg'
   whiteButton(testIcon, testText);
@@ -13,7 +13,7 @@ test('button has class button button--white ', () => {
 });
 
 test('button has text', () => {
-  document.body.innerHTML = `<div id="swquiz-app"></div>`;
+  document.body.innerHTML = `<div id="swquiz-game-footer-left"></div>`;
   const testText = 'Hall of fame';
   const testIcon = 'static/assets/icons/contacts_24px.svg'
   whiteButton(testIcon, testText);
@@ -21,7 +21,7 @@ test('button has text', () => {
 });
 
 test('button has text - Hall of fame', () => {
-  document.body.innerHTML = `<div id="swquiz-app"></div>`;
+  document.body.innerHTML = `<div id="swquiz-game-footer-left"></div>`;
   const testText = 'Hall of fame';
   const testIcon = 'static/assets/icons/contacts_24px.svg'
   whiteButton(testIcon,testText);
@@ -29,7 +29,7 @@ test('button has text - Hall of fame', () => {
 });
 
 test('button has icon', () => {
-  document.body.innerHTML = `<div id="swquiz-app"></div>`;
+  document.body.innerHTML = `<div id="swquiz-game-footer-left"></div>`;
   const testText = 'Hall of fame';
   const testIcon = 'static/assets/icons/contacts_24px.svg'
   whiteButton(testIcon, testText);
