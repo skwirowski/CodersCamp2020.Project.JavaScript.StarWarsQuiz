@@ -48,7 +48,7 @@ function createRankingHeader() {
 }
 
 function ranking(scoreList) {
-  let parent = document.getElementById('swquiz-game-body');
+  let parent = document.querySelector('#swquiz-game-body');
 
   let ranking = createDiv('box', 'ranking-box');
 
@@ -77,7 +77,7 @@ function renderRanking(mode) {
   attachRulesButtonCallback();
 
   // Remove children of swquiz-game-body
-  let gameBodyElement = document.getElementById('swquiz-game-body');
+  let gameBodyElement = document.querySelector('#swquiz-game-body');
   gameBodyElement.innerHTML = '';
 
   // Render ranking for selected mode

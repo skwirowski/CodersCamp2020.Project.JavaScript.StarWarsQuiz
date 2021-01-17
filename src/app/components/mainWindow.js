@@ -11,7 +11,7 @@ import { getImage } from '../logic/generatingQuestions/gettingImage'
 export const playerAnswers = [];
 export const computerAnswers = [];
 function fillMainWindowHTML() {
-  let quizBody = document.getElementById('swquiz-body');
+  let quizBody = document.querySelector('#swquiz-body');
 
   let quizGame = createDiv('swquiz-game', 'swquiz-game');
   let quizGameHeader = createDiv('swquiz-game-header', 'swquiz-game-header');
@@ -40,7 +40,7 @@ function fillMainWindowHTML() {
 async function mainWindow(maxTime) {
   fillMainWindowHTML();
 
-  mainMenu(document.getElementById('swquiz-header'), setGameMode);
+  mainMenu(document.querySelector('#swquiz-header'), setGameMode);
 
   redButton('play the game');
   whiteButton('Hall of fame');

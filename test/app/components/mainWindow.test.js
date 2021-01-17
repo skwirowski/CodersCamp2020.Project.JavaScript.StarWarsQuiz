@@ -12,26 +12,25 @@ test('screen shows main window with rules', () => {
 
   mainWindow();
   // Test against menu
-  expect(document.getElementById('swquiz-header')).toBeTruthy();
-  expect(document.getElementById('menuContainer')).toBeTruthy();
+  expect(document.querySelector('#menuContainer')).toBeTruthy();
 
   // Test against game body
-  expect(document.getElementById('swquiz-body')).toBeTruthy();
+  expect(document.querySelector('#swquiz-body')).toBeTruthy();
 
   // Game question
-  expect(document.getElementById('swquiz-game-header')).toBeTruthy();
-  expect(document.getElementById('question')).toBeTruthy();
+  expect(document.querySelector('#swquiz-game-header')).toBeTruthy();
+  expect(document.querySelector('#question')).toBeTruthy();
 
   // Game rules
-  expect(document.getElementById('swquiz-game-body')).toBeTruthy();
+  expect(document.querySelector('#swquiz-game-body')).toBeTruthy();
 
   // Game white button
-  expect(document.getElementById('swquiz-game-footer-left')).toBeTruthy();
-  expect(document.getElementById('white-button')).toBeTruthy();
+  expect(document.querySelector('#swquiz-game-footer-left')).toBeTruthy();
+  expect(document.querySelector('#white-button')).toBeTruthy();
 
   // Game red button
-  expect(document.getElementById('swquiz-game-footer-right')).toBeTruthy();
-  expect(document.getElementById('red-button')).toBeTruthy();
+  expect(document.querySelector('#swquiz-game-footer-right')).toBeTruthy();
+  expect(document.querySelector('#red-button')).toBeTruthy();
 
   // Left Image
   expect(screen.getByTestId('imgRecognizer')).toBeTruthy();

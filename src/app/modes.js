@@ -23,7 +23,7 @@ export function getGameMode() {
 }
 
 function changeRules(mode) {
-  let ruleBox = document.getElementById('game-rules-box');
+  let ruleBox = document.querySelector('#game-rules-box');
 
   if (ruleBox) {
     let p = ruleBox.getElementsByTagName('p')[1]; // first one is header
@@ -32,7 +32,7 @@ function changeRules(mode) {
 }
 
 function changeRanking(mode) {
-  let rankingBox = document.getElementById('ranking-box');
+  let rankingBox = document.querySelector('#ranking-box');
 
   if (rankingBox) {
     renderRanking(mode);
@@ -40,7 +40,7 @@ function changeRanking(mode) {
 }
 
 function changeQuestion(mode) {
-  let questionElement = document.getElementById('question');
+  let questionElement = document.querySelector('#question');
 
   if (questionElement) {
     questionElement.innerHTML = getGameModeQuestion(mode);

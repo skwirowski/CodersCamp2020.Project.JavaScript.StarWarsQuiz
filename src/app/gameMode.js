@@ -7,7 +7,7 @@ export const STARSHIPS_MODE_QUESTION_STRING =
   'MODE: Do you recognize this starship?';
 
 export const gameMode = (text) => {
-  const app = document.getElementById('swquiz-game-header');
+  const app = document.querySelector('#swquiz-game-header');
   const questionDiv = document.createElement('div');
 
   questionDiv.id = 'question';

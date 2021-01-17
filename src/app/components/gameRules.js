@@ -29,7 +29,7 @@ function renderRules(mode) {
   attachRankingButtonCallback();
 
   // Remove children of swquiz-game-body
-  let gameBodyElement = document.getElementById('swquiz-game-body');
+  let gameBodyElement = document.querySelector('#swquiz-game-body');
   gameBodyElement.innerHTML = '';
 
   // Render rules for selected mode
