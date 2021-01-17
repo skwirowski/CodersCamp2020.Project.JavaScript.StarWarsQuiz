@@ -83,7 +83,7 @@ const modalSubmitCallback = (e) => {
 export const App = ({ options }) => {
   gameMode('Who is this Character?');
   redButton('play the game');
-  whiteButton('static/assets/icons/contacts_24px.png','Hall of fame');
+  whiteButton('static/assets/icons/contacts_24px.svg','Hall of fame');
   imageRecognizer('c3RhdGljL2Fzc2V0cy9pbWcvbW9kZXMvcGVvcGxlLzM2LmpwZw==');
   mainMenu(document.querySelector('.swquiz-header'), getData);
   modalGameOver(
