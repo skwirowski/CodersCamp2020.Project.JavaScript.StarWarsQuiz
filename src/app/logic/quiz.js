@@ -24,9 +24,9 @@ const quiz = (maxTime = 120000) =>{
         document.querySelector('.lds-ring').style.display = "block";
         
         generateQuestion(activeTarget.toLocaleLowerCase()).then(res=> {
-            imageRecognizer(res.image);
-            answersOnQuestion(res, activeTarget.toLocaleLowerCase());
             startTime(maxTime);
+            imageRecognizer(res.image);
+            answersOnQuestion(res, activeTarget.toLocaleLowerCase());   
             document.querySelector('.question').style.display = "flex";
             document.querySelector('.lds-ring').style.display = "none";
         })
