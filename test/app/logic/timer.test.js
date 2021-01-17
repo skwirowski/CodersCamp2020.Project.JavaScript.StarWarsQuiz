@@ -3,7 +3,7 @@ import { screen } from '@testing-library/dom';
 
 test('Stop timer when element does not exist', () => {
     jest.useFakeTimers();
-    expect(()=>startTime(20000)).toThrow('Can not attach time left text');
+    expect(()=>startTime(20000)).toThrow("Cannot read property 'innerHTML' of null");
     jest.advanceTimersByTime(5000);
 })
 

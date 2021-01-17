@@ -139,7 +139,7 @@ const createButton = (parent, answers) => {
     const correctPlayersAnswersCount = answers.filter(answer=>answer.isCorrect).length;
     let activeTarget = getGameMode()
     const inputName = document.querySelector('#name')
-    saveScore(activeTarget, inputName.value, correctPlayersAnswersCount, answers.length)
+    saveScore(activeTarget, inputName.value, correctPlayersAnswersCount, answers.length);
   })
   return btn;
 };

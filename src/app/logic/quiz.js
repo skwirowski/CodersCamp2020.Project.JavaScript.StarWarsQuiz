@@ -13,15 +13,21 @@ const quiz = (maxTime = 120000) =>{
         const rulesBox = document.querySelector('.game-rules-box')
         const whiteButton = document.querySelector('#white-button')
         const defaultPhoto = document.querySelector('.swquiz-app__image')
-        rulesBox.style.display = "none"
+        const ranking = document.querySelector('#ranking-box');
+        if(ranking) ranking.style.display = "none"
+        if(rulesBox) rulesBox.style.display = "none"
         startButton.style.display = "none"
         whiteButton.style.display = "none"
         defaultPhoto.style.display = "none"
 
-        startTime(maxTime);
+
+        document.querySelector('.lds-ring').style.display = "block";
+        
         generateQuestion(activeTarget.toLocaleLowerCase()).then(res=> {
-            imageRecognizer(res.image)
-            answersOnQuestion(res, activeTarget.toLocaleLowerCase())
+            imageRecognizer(res.image);
+            answersOnQuestion(res, activeTarget.toLocaleLowerCase());
+            startTime(maxTime);
+            document.querySelector('.lds-ring').style.display = "none";
         })
     })
 

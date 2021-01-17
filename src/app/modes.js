@@ -14,7 +14,7 @@ export function setGameMode(mode) {
   window.globalThis.activeGameMode = mode;
 
   changeRules(mode);
-  changeRanking(getScores(mode));
+  changeRanking(mode);
   changeQuestion(mode);
 }
 
