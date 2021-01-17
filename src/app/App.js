@@ -71,13 +71,4 @@ const modalSubmitCallback = (e) => {
 
 export const App = ({ options }) => {
   mainWindow(options.quizMaxTime);
-
-  // modalGameOver(
-  //   document.querySelector('#swquiz-app'),
-  //   testDataHuman,
-  //   testDataComputer,
-  //   modalSubmitCallback,
-  // );
-  // startTime(options.quizMaxTime)
-  // generateQuestion('people').then(res=> console.log(res))
 };

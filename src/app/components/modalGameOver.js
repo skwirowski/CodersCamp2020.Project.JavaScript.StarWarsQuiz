@@ -142,6 +142,7 @@ const createButton = (parent, answers) => {
     saveScore(activeTarget, inputName.value, correctPlayersAnswersCount, answers.length)
     const appContainer = document.querySelector('#swquiz-app');
     appContainer.classList.remove('modal-overlay');
+    window.location.reload()
   })
   return btn;
 };

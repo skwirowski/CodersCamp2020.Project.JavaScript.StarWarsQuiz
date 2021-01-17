@@ -11,8 +11,8 @@ const modalSubmitCallback = (e) => {
 
 export const startTime = (maxTime) => {
     if(maxTime <= 0) return;
-    timeLeftText(maxTime);
     lightSaber(maxTime);
+    timeLeftText(maxTime);
     const timer = setInterval(()=>{
         maxTime = maxTime - 1000;
         try {

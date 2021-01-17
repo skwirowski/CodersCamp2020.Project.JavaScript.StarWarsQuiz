@@ -12,3 +12,16 @@
   -moz-box-shadow: var(--box-shadow-property);
   box-shadow: var(--box-shadow-property);
 }
+
+@media (min-width: 1px) and (max-width: 350px){
+  .question{
+    font-size: 1em;
+  }
+}
+@media (min-width: 350px) and (max-width: 768px){
+  .question{
+    font-size: 1.2em;
+  }
+}
+
+

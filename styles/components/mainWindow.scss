@@ -1,12 +1,12 @@
 .swquiz-row {
+  //width: 100%;
   display: grid;
   grid-template-columns: 0.3fr 0.7fr;
   grid-template-areas: 'swquiz-row-left swquiz-row-right';
-  column-gap: 4rem;
+  column-gap: 20px;
   justify-content: space-between;
-  justify-items: center;
   align-items: center;
-  margin: 2vw 0;
+  margin-bottom: 20px;
 }
 
 .swquiz-row-left {
@@ -51,4 +51,14 @@
 
 .swquiz-game-footer{
   grid-area: swquiz-game-footer;
+}
+
+@media (max-width: 768px){
+  .swquiz-row{
+    display: inline;
+  }
+  #swquiz-body {
+    display: flex;
+    flex-direction: column-reverse;
+  }
 }

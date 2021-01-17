@@ -9,7 +9,7 @@ export const lightSaber = (maxTime) => {
     </div>`;
     MAX_TIME = maxTime;
 
-    document.querySelector('.swquiz-game-footer').innerHTML += saber;
+    document.querySelector('#swquiz-app').innerHTML += saber;
 }
 
 export const updateSaber = (time) => {

@@ -1,11 +1,19 @@
 .container-answers {
     display: grid;
-    width: 62.5vw;
-    min-height: 350px;
+    width: 100%;
+    margin-top: 30px;
     grid-template-columns: 1fr 1fr;
-    grid-template-rows: 100px 100px; 
-    column-gap: 25px;
-    row-gap: 25px;
+    grid-template-rows: 90px 90px; 
+    gap: 20px;
     justify-content: center;
-    padding-right: 50px;
 }
+
+@media (max-width: 768px){
+    .container-answers{
+        width: 80%;
+        margin: 0 auto;
+        grid-template-columns: 1fr;
+        grid-template-rows: 70px 70px 70px 70px;
+    }
+}
+

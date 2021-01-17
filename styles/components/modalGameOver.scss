@@ -1,6 +1,9 @@
 .swquiz-modal {
-  width: 60vw;
-  height: 90vh;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 80%;
   background: var(--base-white);
   border-radius: var(--border-radius);
   box-shadow: var(--box-shadow-property);
