@@ -139,7 +139,7 @@
     &--table{
       text-align: center;
       img{
-        max-height: 50px;
+        max-height: 4em;
       }
       tbody{
         max-height: 20vh;
@@ -186,12 +186,19 @@
         max-height: 15vh;
       }
     }
+    &--form{
+      grid-template-columns: 1fr;
+        grid-template-areas: 
+        "label"
+        "input"
+        "button";
   }
+}
 }
 
 @media screen and (max-height:590px){
   .swquiz-modal{
-    font-size: 3vh;
+    font-size: 2vh;
     &--table{
       tbody{
         max-height: 15vh;
@@ -201,7 +208,7 @@
       text-align: center;
       width:70%;
       justify-self: center;
-      height: 3vw;
+      height: 5vh;
     }
     &--photoContainer{
       display: none;
@@ -210,6 +217,44 @@
       grid-template-columns: 1fr;
       max-height: 40%;
     }
+    &--form{
+      grid-template-columns: 1fr;
+        grid-template-areas: 
+        "label"
+        "input"
+        "button";
+    
 
   }
 }
+}
+
+@media screen and (max-height:590px) and (max-width:550px){
+  .swquiz-modal{
+    font-size: 2vh;
+    &--form{
+      grid-template-columns: 1fr;
+        grid-template-areas: 
+        "label"
+        "input"
+        "button";
+}
+}
+}
+
+@media screen and (max-height:590px) and (min-width:550px){
+  .swquiz-modal{
+    font-size: 4vh;
+    &--form{
+      grid-template-columns: 1fr;
+        grid-template-areas: 
+        "label"
+        "input"
+        "button";
+    }
+    }
+  }
+
+
+
+
