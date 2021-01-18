@@ -27,7 +27,7 @@ function fillMainWindowHTML() {
   );
   let quizGameFooter = createDiv(
     'swquiz-game-footer'
-  )
+  );
 
   quizGame.appendChild(quizGameHeader);
   quizGame.appendChild(quizGameBody);
@@ -46,11 +46,11 @@ async function mainWindow(maxTime) {
   redButton('play the game');
   whiteButton('static/assets/icons/contacts_24px.svg', 'Hall of fame');
   gameMode('Who is this Character?');
-  const default64Image = await getImage('people', 36)
-  imageRecognizer(default64Image)
+  const default64Image = await getImage('people', 36);
+  imageRecognizer(default64Image);
   renderRules(getGameMode());
   
-  quiz(15000) // pass maxTime - this is only for testing
+  quiz(maxTime);
 }
 
 export { mainWindow };

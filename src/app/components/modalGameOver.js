@@ -180,7 +180,9 @@ const modalGameOver = (parent, playerAnswers, computerAnswers, callback) => {
   modal.setAttribute('data-testid', 'gameOverModal');
   if (modal) {
     const appContainer = document.querySelector('#swquiz-app');
-    appContainer.classList.add('modal-overlay');
+    let modalOverlay = document.createElement('div');
+    modalOverlay.classList.add('modal-overlay');
+    appContainer.appendChild(modalOverlay);
   }
   parent.appendChild(modal);
   createHeader(modal, 'Game Over');
