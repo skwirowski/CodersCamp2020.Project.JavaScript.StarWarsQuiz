@@ -91,7 +91,7 @@ const mergeAndDisplayMiddleSection = (
 ) => {
   const container = createContainer(parent, 'middleContainer');
   const img = createMidImage(
-    '../../../static/assets/ui/MasterYodaLeft.png',
+    'static/assets/ui/MasterYodaLeft.png',
     parent,
   );
   const detailedAnswersSection = createDetailedAnswerSection(

@@ -4,7 +4,7 @@ const MAX_WIDTH = 100;
 
 export const lightSaber = (maxTime) => {
     const saber = `<div class="light-saber-container" data-testid="light-saber-container">
-    <img src="../../../static/assets/ui/LightsaberHandle.png" alt="saber"/>
+    <img src="static/assets/ui/LightsaberHandle.png" alt="saber"/>
     <div class="light-box"> <div class="light" data-testid="light"></div></div>
     </div>`;
     MAX_TIME = maxTime;
