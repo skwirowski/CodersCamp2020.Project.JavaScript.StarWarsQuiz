@@ -1,4 +1,4 @@
-import { answersOnQuestion } from '../src/app/components/answersOnQuestion';
+import { answersOnQuestion } from '../../../src/app/components/answersOnQuestion';
 import { fireEvent, screen } from '@testing-library/dom';
 import '@testing-library/jest-dom/extend-expect';
 

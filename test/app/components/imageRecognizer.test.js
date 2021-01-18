@@ -1,4 +1,4 @@
-import { imageRecognizer } from '../src/app/imageRecognizer';
+import { imageRecognizer } from '../../../src/app/components/imageRecognizer';
 import { screen } from '@testing-library/dom';
 import '@testing-library/jest-dom/extend-expect';
 

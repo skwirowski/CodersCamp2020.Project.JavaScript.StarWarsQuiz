@@ -1,4 +1,4 @@
-import { isAnswerCorrect } from '../src/app/components/isAnswerCorrect';
+import { isAnswerCorrect } from '../../../src/app/components/isAnswerCorrect';
 import '@testing-library/jest-dom/extend-expect';
 
 test("Throw error when guessed answer isn't string.", () => {

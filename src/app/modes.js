@@ -1,7 +1,7 @@
 import { getRule } from './ruleConstantStrings';
 import { renderRanking } from './components/ranking';
 import { getScores } from './logic/localStorageScore';
-import { getGameModeQuestion } from './gameMode';
+import { getGameModeQuestion } from './components/gameMode';
 
 export const VEHICLE_MODE = 'Vehicles';
 export const PEOPLE_MODE = 'People';

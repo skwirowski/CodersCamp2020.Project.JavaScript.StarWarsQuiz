@@ -1,10 +1,10 @@
 import createDiv from '../utils/createDiv';
-import { redButton } from '../redButton';
-import { whiteButton } from '../whiteButton';
-import { gameMode } from '../gameMode';
+import { redButton } from './redButton';
+import { whiteButton } from './whiteButton';
+import { gameMode } from './gameMode';
 import { getGameMode, setGameMode } from '../modes';
 import { mainMenu } from '../components/mainMenu';
-import { imageRecognizer } from '../imageRecognizer';
+import { imageRecognizer } from './imageRecognizer';
 import { renderRules } from './gameRules';
 import { quiz } from '../logic/quiz'
 import { getImage } from '../logic/generatingQuestions/gettingImage'

@@ -1,7 +1,7 @@
 import { generateQuestion } from '../logic/generatingQuestions/generateQuestion'
 import { playerAnswers, computerAnswers } from './mainWindow'
 import { isAnswerCorrect } from '../components/isAnswerCorrect'
-import { imageRecognizer } from '../imageRecognizer';
+import { imageRecognizer } from './imageRecognizer';
 import { playerComputer } from '../logic/playerComputer'
 // import { PlayerHuman} from '../logic/playerHuman'
 

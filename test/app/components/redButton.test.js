@@ -1,4 +1,4 @@
-import { redButton } from '../src/app/redButton';
+import { redButton } from '../../../src/app/components/redButton';
 import { screen } from '@testing-library/dom';
 import '@testing-library/jest-dom/extend-expect';
 
