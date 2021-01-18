@@ -26,7 +26,7 @@ function getScores(mode) {
 }
 
 function compareScores(scoreA, scoreB) {
-  return scoreB.percentage - scoreA.percentage;
+  return scoreB.correctNumber - scoreA.correctNumber;
 }
 
 function modeIsValid(mode) {
