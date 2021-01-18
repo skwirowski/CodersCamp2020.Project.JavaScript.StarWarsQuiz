@@ -1,10 +1,10 @@
 .swquiz-row {
   //width: 100%;
   display: grid;
-  grid-template-columns: 0.3fr 0.7fr;
+  grid-template-columns: auto 0.7fr;
   grid-template-areas: 'swquiz-row-left swquiz-row-right';
   column-gap: 20px;
-  justify-content: space-between;
+  justify-content: space-evenly;
   align-items: center;
   margin-bottom: 20px;
 }
