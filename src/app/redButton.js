@@ -8,15 +8,3 @@ export const redButton = (text) => {
   button.appendChild(buttonText);
   app.appendChild(button);
 };
-
-// TODO: remove this
-export const whiteButton = (text) => {
-  const app = document.getElementById('swquiz-game-footer-left');
-  const button = document.createElement('button');
-  let buttonText = document.createTextNode(`${text}`);
-  button.setAttribute('id', 'white-button');
-  button.setAttribute('class', 'button button--red button--uppercase');
-  // button.setAttribute('data-testid', 'white-button');
-  button.appendChild(buttonText);
-  app.appendChild(button);
-};

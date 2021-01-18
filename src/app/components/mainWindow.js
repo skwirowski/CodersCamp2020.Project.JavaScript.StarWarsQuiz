@@ -1,5 +1,6 @@
 import createDiv from '../utils/createDiv';
-import { redButton, whiteButton } from '../redButton'; // TODO: remove white button
+import { redButton } from '../redButton';
+import { whiteButton } from '../whiteButton';
 import { gameMode } from '../gameMode';
 import { getGameMode, setGameMode } from '../modes';
 import { mainMenu } from '../components/mainMenu';
@@ -43,7 +44,7 @@ async function mainWindow(maxTime) {
   mainMenu(document.querySelector('#swquiz-header'), setGameMode);
 
   redButton('play the game');
-  whiteButton('Hall of fame');
+  whiteButton('static/assets/icons/contacts_24px.svg', 'Hall of fame');
   gameMode('Who is this Character?');
   const default64Image = await getImage('people', 36)
   imageRecognizer(default64Image)

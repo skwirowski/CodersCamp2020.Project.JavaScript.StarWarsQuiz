@@ -3,6 +3,7 @@ import createDiv from '../utils/createDiv';
 import { getScores } from '../logic/localStorageScore';
 import { attachRulesButtonCallback } from './gameRules';
 import { getGameMode } from '../modes';
+import { whiteButton } from '../whiteButton';
 
 function createEntry(place, scoreEntry) {
   let nickname = '-',
@@ -85,10 +86,14 @@ function renderRanking(mode) {
 }
 
 function attachRankingButtonCallback() {
-  let whiteButton = document.getElementById('white-button');
-  if (whiteButton) {
-    whiteButton.textContent = 'Hall of fame';
-    whiteButton.addEventListener(
+  let footerLeft = document.getElementById('swquiz-game-footer-left');
+  if (footerLeft) {
+    footerLeft.innerHTML = '';
+
+    whiteButton('static/assets/icons/contacts_24px.svg', 'Hall of fame');
+    let whiteBtn = document.getElementById('white-button');
+    
+    whiteBtn.addEventListener(
       'click',
       function () {
         renderRanking(getGameMode());

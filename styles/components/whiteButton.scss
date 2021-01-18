@@ -1,0 +1,35 @@
+.button--white {
+    background-color: var(--base-white);
+    color: var(--base-black);
+    border: none;
+    box-shadow: var(--box-shadow-simple);
+    cursor: pointer;
+}
+
+.button--white::first-letter {
+    text-transform: uppercase;
+}
+
+.button > p {
+    padding-left: 2em;
+}
+
+.icon-button{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    font-size: 2rem;
+}
+
+@media (max-width: 768px){
+    .button > p {
+        padding-left: 0.3em;
+    }
+    .icon-button > p{
+        margin-left: 0.3rem;
+        font-size: 1.2rem;
+    }
+  }
