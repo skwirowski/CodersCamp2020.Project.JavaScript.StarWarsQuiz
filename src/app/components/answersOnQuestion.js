@@ -51,14 +51,12 @@ export const answersOnQuestion = (answerObject, target) => {
             else {
                 e.target.classList.add('button--wrong');
             }
-            window.setTimeout(function(){
-                container.remove();
-                answersOnQuestion(nextQuestion, target)
-                imageRecognizer(nextQuestion.image)
-            }, 1000);
 
             generateQuestion(target).then(res=> {
                 nextQuestion = res;
+                container.remove();
+                answersOnQuestion(nextQuestion, target)
+                imageRecognizer(nextQuestion.image)
             })
     }, {
         once: true
