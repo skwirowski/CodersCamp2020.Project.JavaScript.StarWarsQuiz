@@ -28,8 +28,7 @@ const testDataHuman = [
     correct: 'Test',
     isCorrect: true,
     img: '../../static/assets/img/modes/people/10.jpg',
-  },
-  
+  },  
 ];
 
 const testDataComputer = [

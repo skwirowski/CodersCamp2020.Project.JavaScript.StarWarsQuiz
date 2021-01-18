@@ -180,13 +180,38 @@
   }
 }
 
-@media screen and (max-width:720px){
+@media screen and (max-width:720px) and (max-height:745px) and (min-height:591px){
   .swquiz-modal{
     font-size: 3.5vw;
     &--table{
       tbody{
-        max-height: 25vh;
+        max-height: 15vh;
       }
     }
+  }
+}
+
+@media screen and (max-height:590px){
+  .swquiz-modal{
+    font-size: 3vh;
+    &--table{
+      tbody{
+        max-height: 15vh;
+      }
+    }
+    &--nameInput{
+      text-align: center;
+      width:70%;
+      justify-self: center;
+      height: 3vw;
+    }
+    &--photoContainer{
+      display: none;
+    }
+    &--middleContainer{
+      grid-template-columns: 1fr;
+      max-height: 40%;
+    }
+
   }
 }
