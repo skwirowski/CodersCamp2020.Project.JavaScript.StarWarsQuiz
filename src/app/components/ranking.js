@@ -3,7 +3,7 @@ import createDiv from '../utils/createDiv';
 import { getScores } from '../logic/localStorageScore';
 import { attachRulesButtonCallback } from './gameRules';
 import { getGameMode } from '../modes';
-import { whiteButton } from '../whiteButton';
+import { whiteButton } from './whiteButton';
 
 function createEntry(place, scoreEntry) {
   let nickname = '-',

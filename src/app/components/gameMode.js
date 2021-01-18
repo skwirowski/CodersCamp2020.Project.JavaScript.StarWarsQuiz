@@ -1,4 +1,4 @@
-import { PEOPLE_MODE, VEHICLE_MODE, SPACESHIPS_MODE } from './modes';
+import { PEOPLE_MODE, VEHICLE_MODE, SPACESHIPS_MODE } from '../modes';
 
 export const VEHICLE_MODE_QUESTION_STRING =
   'MODE: Do you recognize this vehicle?';

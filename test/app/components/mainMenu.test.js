@@ -1,4 +1,4 @@
-import { mainMenu } from '../src/app/components/mainMenu';
+import { mainMenu } from '../../../src/app/components/mainMenu';
 import { screen } from '@testing-library/dom';
 import '@testing-library/jest-dom/extend-expect';
 

@@ -1,4 +1,4 @@
-import { whiteButton } from '../src/app/whiteButton';
+import { whiteButton } from '../../../src/app/components/whiteButton';
 import { screen } from '@testing-library/dom';
 import '@testing-library/jest-dom/extend-expect';
 

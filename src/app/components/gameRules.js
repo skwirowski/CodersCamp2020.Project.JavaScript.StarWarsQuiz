@@ -3,7 +3,7 @@ import { createIconHeader } from './iconHeader';
 import { attachRankingButtonCallback } from './ranking';
 import { getGameMode } from '../modes';
 import { getRule } from '../ruleConstantStrings';
-import { whiteButton } from '../whiteButton';
+import { whiteButton } from './whiteButton';
 
 function gameRules(textToShow) {
   let parent = document.querySelector('.swquiz-game-body');

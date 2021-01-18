@@ -1,4 +1,4 @@
-import { gameMode } from '../src/app/gameMode';
+import { gameMode } from '../../../src/app/components/gameMode';
 import { screen } from '@testing-library/dom';
 import '@testing-library/jest-dom/extend-expect';
 
