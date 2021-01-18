@@ -7,7 +7,7 @@ export const whiteButton = (icone , text) => {
     let img = new Image();
     img.src = icone;
     paragraph.appendChild(buttonText);
-    button.setAttribute('class', 'button button--white icon-header');
+    button.setAttribute('class', 'button button--white icon-button');
     button.setAttribute('id', 'white-button');
     button.setAttribute('data-testid', 'white-button');
     button.appendChild(img);
