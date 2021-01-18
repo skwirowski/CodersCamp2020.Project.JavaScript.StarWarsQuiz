@@ -64,7 +64,7 @@ function ranking(scoreList) {
     createIconHeader(
       'Mode Ranking',
       'ranking-icon',
-      './static/assets/ui/contacts_24px.svg',
+      'static/assets/icons/contacts_24px.svg',
       'Ranking ico',
     ),
   );
