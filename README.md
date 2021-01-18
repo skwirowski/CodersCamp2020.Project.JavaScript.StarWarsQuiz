@@ -2,7 +2,7 @@
 
 This is a game based on The Star Wars API ([SWAPI](https://swapi.dev/)). You have 2 minutes to answer as many questions as you can. Will your score be high enough to place in ranking? Let's find out!
 
-Click [here]() to start game. Fingers crossed!
+Click [here](https://skwirowski.github.io/CodersCamp2020.Project.JavaScript.StarWarsQuiz/) to start game. Fingers crossed!
 
 ---
 ### Game description
@@ -35,6 +35,7 @@ While you play, at the same time the **Computer Player** tries it's luck. When t
 - [budnickip](https://github.com/budnickip),
 - [domq077](https://github.com/domq077),
 - [GoraJakub](https://github.com/GoraJakub),
-- [Ryczko](https://github.com/Ryczko),
-- [mfrydrychowicz](https://github.com/mfrydrychowicz).
+- [mfrydrychowicz](https://github.com/mfrydrychowicz),
+- [Ryczko](https://github.com/Ryczko).
+
 
