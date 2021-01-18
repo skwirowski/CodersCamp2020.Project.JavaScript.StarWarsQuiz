@@ -13,9 +13,6 @@
   justify-content: space-evenly;
   font-size: 1.5em;
   padding: 3vw;
-  position: fixed;
-  top: 50%;
-  left: 50%;
   transform: translate(-50%, -50%);
   z-index: 1050;
   
@@ -66,6 +63,7 @@
       justify-content: space-evenly;
       margin: 20px 0 20px;
       td {
+        word-wrap: anywhere;
         width: 25%;
         display: flex;
         justify-content: center;
@@ -131,7 +129,7 @@
 
 @media screen and (max-width:1023px){
   .swquiz-modal{
-    height: 90vh;
+
     font-size:2.5vw;
     justify-content: space-between;
     &--middleContainer{
